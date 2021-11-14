@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Code_CH.Models.BaoCaoDoanhThu>
+
+@{
+    ViewBag.Title = "DoanhThuThang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+  @*  @using (Html.BeginForm("DoanhThuThang", "Home"))
+    {*@
+        <div class="Header_Dau_Sach">
+            <div class="row align-items-center ">
+                <div class="col-md-4 ">
+                    <h3 class="Dau-sach-header-content">Báo Cáo Danh Thu </h3>
+                </div>
+                <div class="col-md-4 DauSach-btn-search">
+                    <input type="search" placeholder="Nhập tên người đặt" name="_name">
+                </div>
+                <div class="col-md-4" style="text-align:center;">
+
+                      @using (Html.BeginForm("BaoCaoDanhThuCuaHang", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                      { 
+                    <input class="thongke_baocao_new" type="submit" value="Thống Kê Mới !" />
+                      }
+                  
+                </div>
+            </div>
+        </div>
+        <div class="row_pageBaoCao">
+            <div class="col-md-7">
+                @using (Html.BeginForm("ShowDoanhThu", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div style="text-align:center;">
+                        <input class="thongke_baocao" type="submit" value="Sao Kê!" />
+                    </div>
+                    <div class="list_DauSach_table_BC">
+                        <table class="table_baocao">
+                            <thead>
+                                <tr>
+                                    <td>Ngày Thống Kê</td>
+                                    <td>Số Lượng Tồn</td>
+                                    <td>Số Lượng Xuất</td>
+                                    <td>Doanh Thu</td>
+
+                                    <td class="table_DauSach_ChucNang"></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="diachiKH">@ViewBag.ngaybaocao</td>
+                                    <td class="sodienthoaiKH">@ViewBag.soluongton</td>
+                                    <td class="diachiKH">@ViewBag.soluongxuat </td>
+                                    <td class="sodienthoaiKH">@ViewBag.tong</td>
+                                    <td class="theTV-btn">
+                                        @* <a class="block" href="@Url.Action("BlockTaiKhoanKhachHang", "Home", new { id = item.maKH })"><i class="fas fa-lock"></i></a>
+                                <a class="del" onclick="return confirm('Bạn chắc chắn muôn xóa tài khoản tên ) này ?')" href="@Url.Action("XoaTaiKhoan", "Home", new { id = item.maKH })"><i class="fas fa-trash-alt"></i></a>*@
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                </div>
+                
+            <div class="col-md-5" style="background-color:aquamarine;padding:10px 30px;border-radius:10%; height:150px;"> 
+               <div class="row ">
+                   <label>Số lượng bán tăng :</label> <strong>@ViewBag.saokesoluong</strong>
+               </div>
+                <div class="row row_tangdoanhthu">
+                    <label>doanh thu tăng :</label> <strong>100000 vnđ</strong>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:10px;">   <h5>! Danh sách tất cả thống kê !</h5></div>
+            <div class="list_DauSach_table">
+                <table class="table_DauSach">
+                    <thead>
+                        <tr>
+                            <td>Ngày Thống Kê</td>
+                            <td>Số Lượng Tồn</td>
+                            <td>Số Lượng Xuất</td>
+                            <td>Doanh Thu</td>
+
+                            <td class="table_DauSach_ChucNang"></td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td class="diachiKH">@Html.DisplayFor(a => item.ngayTK)</td>
+                                <td class="sodienthoaiKH">@Html.DisplayFor(a => item.soluongTon)</td>
+                                <td class="diachiKH">@Html.DisplayFor(a => item.soluongXuat) </td>
+                                <td class="sodienthoaiKH">@Html.DisplayFor(a => item.doanhThu)</td>
+                                <td class="theTV-btn">
+                                    @* <a class="block" href="@Url.Action("BlockTaiKhoanKhachHang", "Home", new { id = item.maKH })"><i class="fas fa-lock"></i></a>
+                                <a class="del" onclick="return confirm('Bạn chắc chắn muôn xóa tài khoản tên ) này ?')" href="@Url.Action("XoaTaiKhoan", "Home", new { id = item.maKH })"><i class="fas fa-trash-alt"></i></a>*@
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+@*    }*@
+</body>
+
+

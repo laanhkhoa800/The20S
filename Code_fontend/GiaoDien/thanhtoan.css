@@ -1,0 +1,232 @@
+.Page_thanhtoan {
+    margin: 0px;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.page_content {
+    width: 100%;
+    margin: 0px;
+    height: auto;
+    display: inline;
+}
+
+.hr_123 {
+    height: 1px;
+    background-color: saddlebrown;
+}
+
+.btn_thanhtoan_123 {
+    border-radius: 5px;
+    background-color: rgb(67, 114, 255);
+    color: rgb(250, 250, 250);
+    border: none;
+    padding: 3px 10px;
+}
+
+.btn_thanhtoan_123:hover {
+    opacity: 0.6;
+}
+
+.text_inp {
+    border: none;
+}
+
+.noidung_grid {
+    border: 1px rgb(177, 177, 177) solid;
+    line-height: 0px;
+    margin-bottom: 7px;
+}
+
+.noidung_grid label {
+    padding-top: 6px;
+    padding-left: 10px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+
+/* .page_13 {
+    width: 80%;
+    margin: 0px 130px;
+}
+
+.content_ItemSanPham {
+    width: 50%;
+    float: left;
+    background-color: rgb(114, 70, 17);
+}
+
+.content_thongtinnhanhang {
+    width: 50%;
+    float: right;
+} */
+
+@media screen and (max-width: 1400px) {
+    .page_13 {
+        width: 80%;
+        margin: 0% 9%;
+    }
+    .content_ItemSanPham {
+        width: 30%;
+        float: right;
+        background-color: rgb(255, 255, 255);
+        border: 1px rgb(167, 165, 165) solid;
+        /* margin: 0px 5px; */
+    }
+    .content_vanchuyen {
+        width: 25%;
+        float: left;
+        border: 1px rgb(161, 161, 161) solid;
+        margin-left: 15px;
+    }
+    .content_thongtinnhanhang {
+        width: 35%;
+        float: left;
+        background-color: rgb(255, 255, 255);
+    }
+    .noidung_donhang {
+        padding: 5px;
+        width: 100%;
+    }
+    .noidung input {
+        width: 100%;
+        /* margin-top: 7px; */
+        padding-left: 10px;
+    }
+    .noidung textarea {
+        width: 100%;
+        margin-top: 7px;
+    }
+    /* item sản phẩm  */
+    .img_123 {
+        width: 18%;
+        height: 20px;
+        float: left;
+    }
+    .nd_123 {
+        width: 55%;
+        height: auto;
+        float: left;
+        padding: 4px 10px;
+        font-size: 10px;
+        line-height: 1px;
+    }
+    .gia_123 {
+        width: 27%;
+        float: right;
+    }
+    .img_sanpham_123 {
+        width: 80%;
+        height: 40px;
+    }
+    /* Tạm tính giá sản phẩm */
+    .tamtinhgia_sanpham {
+        width: 100%;
+        background-color: royalblue;
+        /* border-bottom-width: 1px;
+        border-bottom-color: red;
+        border-bottom-style: solid; */
+    }
+    .tonghoadon_123 {
+        width: 100%;
+    }
+    .tamtinhgia_sanpham {
+        width: 100%;
+        display: inline;
+    }
+    .right_tamtinhgia {
+        width: 50%;
+        float: left;
+        position: relative;
+        left: 0px;
+        font-size: 12px;
+        opacity: 0.7;
+        padding-top: 5px;
+    }
+    .left_tamtinhgia {
+        width: 50%;
+        float: right;
+        position: relative;
+        text-align: end;
+    }
+    .right_tamtinhgi {
+        width: 50%;
+        float: left;
+        position: relative;
+        left: 0px;
+    }
+    .left_tamtinhgi {
+        width: 50%;
+        float: right;
+        position: relative;
+        text-align: end;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .page_13 {
+        width: 100%;
+        margin: 0px;
+    }
+    .content_ItemSanPham {
+        width: 100%;
+        background-color: rgb(243, 243, 243);
+    }
+    .content_vanchuyen {
+        width: 100%;
+        float: left;
+        margin-left: 0px;
+    }
+    .content_thongtinnhanhang {
+        width: 100%;
+        padding-left: 10px;
+    }
+    .tamtinhgia_sanpham {
+        width: 100%;
+        background-color: royalblue;
+        /* border-bottom-width: 1px;
+        border-bottom-color: red;
+        border-bottom-style: solid; */
+    }
+    /* item sản phẩm  */
+    .img_123 {
+        width: 18%;
+        height: auto;
+        float: left;
+    }
+    .nd_123 {
+        width: 55%;
+        height: auto;
+        float: left;
+        padding: 4px 10px;
+        line-height: 2px;
+    }
+    .gia_123 {
+        width: 25%;
+        float: right;
+    }
+    .tamtinhgia_sanpham {
+        width: 100%;
+    }
+    .img_sanpham_123 {
+        width: 80%;
+        height: 41px;
+        padding: 5px;
+    }
+    .right_tamtinhgi {
+        width: 100%;
+    }
+    .left_tamtinhgi {
+        width: 100%;
+    }
+    .btn_thanhtoan_123 {
+        border-radius: 5px;
+        background-color: rgb(67, 114, 255);
+        color: rgb(250, 250, 250);
+        border: none;
+        padding: 3px 10px;
+        width: 100%;
+    }
+}

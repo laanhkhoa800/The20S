@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Page_Cart</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./Cart.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="widescreen.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="smallscreen.css">
+</head>
+
+
+<body>
+
+    <div class="pageCart">
+        <!-- <div class="khoi-slide">
+            <div class="cac-slide">
+                <div class="slide active"><img src="img/1.png"></div>
+                <div class="slide"><img src="img/2.png"></div>
+                <div class="slide"><img src="img/3.png"></div>
+                <div class="slide"><img src="img/4.png"></div>
+            </div>
+            <div class="nut-slide">
+                <span id="btn-prev"><i class="fas fa-chevron-left">❮</i></span>
+                <span id="btn-next"><i class="fas fa-chevron-right">❯</i></span>
+                <ul>
+                    <li class="active_nut"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div> -->
+        <div class="container">
+            <div class="mediacreen">
+                <h3 style=" font-family: 'Times New Roman', Times, serif;font-weight: 700 ;color: rgb(71, 71, 71); ">Giỏ Hàng</h3>
+                <div class="divtongcart" style="width:100%;">
+                    <div class="Cart_sanpham">
+                        <table class="tab_sanpham1">
+                            <tr class="hangdautb ">
+                                <th class="tb_sanpham ">Sản Phẩm</th>
+                                <th class="tb_soluong ">Số Lượng</th>
+                                <th class="tb_tongtien ">Tổng Tiền</th>
+                                <th class="tb_xoa ">Xóa</th>
+
+                            </tr>
+                            <tr>
+                                <td style="width:100%;float: left;">
+                                    <div style="float: left;width: 60%;">
+                                        <img class="img_sanpham_cart" src="./image/SP02_DT6.PNG">
+                                    </div>
+                                    <div>
+                                        <p>DirtyCoins Print Cardigan </p>
+                                        <p>Size M</p>
+                                        <p>490.000 đ</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pagination">
+                                        <a href="#" style="border-radius: 10px 0px 0px 10px;">❮</a>
+                                        <a href="#" style="">1</a>
+                                        <a href="#" style="border-radius:0px 10px 10px 0px;">❯</a>
+                                    </div>
+                                </td>
+                                <td>490.000 đ</td>
+                                <td>
+                                    <i class="fas fa-trash"></i>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class="Cart_tongtien ">
+                        <table class="tab_tongtien " style="width: 100%; ">
+                            <!-- <tr class="hangdauTT ">
+                            <th class="tb_tongtien ">Tổng tiền</th>
+                            <th class="tb_sotien " style="position: relative; right: 0px; ">490.000 đ</th>
+                        </tr> -->
+                            <tr>
+                                <td colspan="2 " style="height: 50px; text-align: center; ">
+                                    <button class="btnthanhtoan " style=" ">Đặt Hàng</button>
+                                    <!-- <button class="btnthanhtoan " style=" ">Tiếp trục mya sắm</button> -->
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <button class="btntieptrucmuasam " style=" ">Tiếp trục mua sắm</button>
+                    </div>
+                    <div style="width: 100%;text-align: center;margin-top: 20px; ">
+                        <p style="font-weight: 500; ">CÓ THỂ Ở ĐÂY CÓ SẢN PHẨM BẠN ĐANG TÌM</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FancyBox -->
+    <div class="content">
+        <a data-fancybox="gallery" href="img/1.png" data-caption="Caption for single image"><img src="img/1.png" alt=""></a>
+        <a data-fancybox="gallery" href="img/2.png"><img src="img/2.png" alt=""></a>
+        <a data-fancybox="gallery" href="img/3.png"><img src="img/3.png" alt=""></a>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="./Fancybox.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+</body>
+
+</html>

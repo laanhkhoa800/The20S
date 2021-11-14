@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Code_CH.Models.DauSanPham>
+@{
+    ViewBag.Title = "POLO";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<head>
+    <title>Page_MainStore</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./Store.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="Page_sales">
+        <div class="container">
+            <div class="img_sales">
+                <img src="~/Content/Image/br_polo.jpg" style="width: 100%;height: 120px;">
+                <label class="titel_inImage">
+                    @* <img src="~/Content/Image/Logo_store.png" alt="logoGrand" />*@
+                    <b>POLOS</b>
+                </label>
+            </div>
+            <div class=" nav_locgiatri">
+                <ul class="row ul_locgiatri">
+                    <li class="li_locgiatri">
+                        <div class="dropdownsearch">
+                            <label class="dropbtnsearch">Lọc Theo Giá</label>
+                            <div class="dropdown-contentsearch">
+                                <form action="">
+                                    <input type="radio" id="html" name="searchBy" value="Duoi100"><label for="html">Dưới 100.000đ</label><br>
+                                    <input type="radio" id="css" name="searchBy" value="Tren100">
+                                    <label for="css">100.000đ - 250.000đ</label><br>
+                                    <input type="radio" id="css" name="searchBy" value="Tren250">
+                                    <label for="css">250.000đ - 400.000đ</label><br>
+                                    <input type="radio" id="javascript" name="searchBy" value="Tren400">
+                                    <label for="javascript">400.000đ - 550.000đ</label><br><br>
+                                    <input class="locgia" name="search" type="submit" value="Submit">
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown_ThuTu">
+                            <label class="dropbtn_ThuTu">Loại</label>
+                            <div class="dropdown-content_ThuTu">
+                                <a href="@Url.Action("POLO","User")"><input style="width:100%;" type="submit" name="" value="POLOS"></a>
+                                <a href="@Url.Action("T_Shirl","User")"> <input style="width:100%;" type="submit" name="" value="SHIRTS"></a>
+                                <a href="@Url.Action("HOODIES","User")"> <input style="width:100%;" type="submit" name="" value="HOODIES"></a>
+                               @* <a href="@Url.Action("POLO","User")"> <input style="width:100%;" type="submit" name="" value="JACKETS"></a>*@
+                                <a href="@Url.Action("SWEATERS","User")"> <input style="width:100%;" type="submit" name="" value="SWEATERS"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown_ThuTu">
+                            <label class="dropbtn_ThuTu">Thứ Tự</label>
+                            <div class="dropdown-content_ThuTu">
+                                <input style="width:100%;"  type="submit" name="sanphamcu" value="sản phẩm cũ">
+                                <input type="submit" name="sanphammoi" value="sản phẩm mới">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="tt_MainStore">
+                <h5>POLOS</h5>
+            </div>
+            <div class="container" style="">
+                <div class="xSanpham">
+                    @foreach (var item in Model)
+                    {
+                        if (item.loaiSP == "POLOS")
+                        {
+                            if (item.soluongSP > 0)
+                            {
+                    <div class="item_sanpham">
+            @*            <a style="text-decoration:none;" href="@Url.Action("ChiTietSanPham","User",new { id=item.maDSP})">*@
+                        <a style="text-decoration:none;" href="@Url.Action("ChiTietSanPham","User", new { id = item.maDSP})">
+                            <img class="img_sanpham" src="@Url.Content(item.hinhanhSP)" alt="hinhanh">
+                        </a>
+                        <div class="name_sanpham"><b>@Html.DisplayFor(model => item.tenSP)</b></div>
+                        <div class="price_sanpham"><b>@Html.DisplayFor(model => item.giaSP) đ</b></div>
+                    </div>
+                        }
+                        else
+                        {
+                            <div class="item_sanphamHetHang">
+                                <a>
+                                    <img class="img_sanphamHetHang" src="@Url.Content(item.hinhanhSP)" alt="hinhanh">
+                                    <div id="label_hethang"> <label>Hết Hàng</label></div>
+                                </a>
+                                <div class="name_sanpham"><del>@Html.DisplayFor(model => item.tenSP)</del></div>
+                                <div class="price_sanpham"><del>@Html.DisplayFor(model => item.giaSP) đ</del></div>
+                            </div>
+                        }
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+
+

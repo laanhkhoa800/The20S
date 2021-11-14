@@ -1,0 +1,68 @@
+.pageUser {
+    margin: 0px;
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.pageUser>div {
+    width: 100%;
+}
+
+.thongtintaikhoan {
+    font-weight: 900;
+}
+
+.content_thongtin {
+    text-align: center;
+}
+
+.content_thongtin input {
+    border: none;
+    border-bottom: 1px rgb(156, 156, 156) solid;
+    width: 90%;
+    margin-top: 12px;
+}
+
+@media screen and(max-width:400px) {
+    .pageUser {
+        margin: 0px;
+        position: relative;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .pageUser>div {
+        width: 100%;
+    }
+    .thongtintaikhoan {
+        font-size: 30px;
+    }
+}
+
+@media screen and(max-width:1400px) {
+    .pageUser {
+        margin: 0px;
+        position: relative;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .pageUser>div {
+        width: 100%;
+    }
+}
+
+
+/* btn thoat */
+
+.btn_thoatUser {
+    margin-top: 15px;
+}
+
+.btn_thoatUser button {
+    padding: 3px 12px;
+    background-color: white;
+}
+
+.btn_thoatUser button:hover {
+    opacity: 0.5;
+}

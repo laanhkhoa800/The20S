@@ -1,0 +1,198 @@
+﻿@model IEnumerable<Code_CH.Models.SanPham>
+
+@{
+    ViewBag.Title = "ChiTietSanPham";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<head>
+    <script>
+        function changeImage(img) {
+            document.getElementById("img").src = img.src.replace("_t", "_b");
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+</head>
+<body>
+    <div class="container Page_ChiTietSanPham" style="height: ;">
+        <div class="Image_Content">
+            <div class="Image_ChiTietSanPham">
+                <div class="content">
+                    @* <img id="img" class="imgchitietsanpham" src="@Url.Content(ViewBag.HinhAnh9)">*@
+                    <a data-fancybox="gallery" href="@Url.Content(ViewBag.HinhAnh9)" data-caption=">@ViewBag.TenSanPham">
+                        <img id="img" class="imgchitietsanpham" src="@Url.Content(ViewBag.HinhAnh9)">
+                    </a>
+                    <a style="visibility:hidden; display:none;" data-caption=">@ViewBag.TenSanPham" data-fancybox="gallery" href="@Url.Content(ViewBag.hinhanh1)"><img src="@Url.Content(ViewBag.hinhanh1)" alt=""></a>
+                    <a style="visibility:hidden;display:none;" data-caption=">@ViewBag.TenSanPham" data-fancybox="gallery" href="@Url.Content(ViewBag.hinhanh2)"><img src="@Url.Content(ViewBag.hinhanh2)" alt=""></a>
+                    <a style="visibility:hidden;display:none;" data-caption=">@ViewBag.TenSanPham" data-fancybox="gallery" href="@Url.Content(ViewBag.hinhanh3)"><img src="@Url.Content(ViewBag.hinhanh3)" alt=""></a>
+                    <a style="visibility:hidden;display:none;" data-caption=">@ViewBag.TenSanPham" data-fancybox="gallery" href="@Url.Content(ViewBag.hinhanh4)"><img src="@Url.Content(ViewBag.hinhanh4)" alt=""></a>
+                </div>
+                @* <img id="img" class="imgchitietsanpham" src="@Url.Content(ViewBag.HinhAnh9)">*@
+                <div class="list_imgCTSP">
+
+                    <button class="img_motaCTSP">
+                        <img onclick="changeImage(this);" src="@Url.Content(ViewBag.hinhanh1)">
+                    </button>
+                    <button class="img_motaCTSP">
+                        <img onclick="changeImage(this);" src="@Url.Content(ViewBag.hinhanh2)">
+                    </button>
+                    <button class="img_motaCTSP">
+                        <img onclick="changeImage(this);" src="@Url.Content(ViewBag.hinhanh3)">
+                    </button>
+                    <button class="img_motaCTSP">
+                        <img onclick="changeImage(this);" src="@Url.Content(ViewBag.hinhanh4)">
+                    </button>
+                    <button class="img_motaCTSP">
+                        <img onclick="changeImage(this);" src="@Url.Content(ViewBag.hinhanh5)">
+                    </button>
+                </div>
+            </div>
+            @* <div class="content">
+                    <a data-fancybox="gallery" href="@Url.Content(ViewBag.hinhanh4)" data-caption="Caption for single image"><img src="@Url.Content(ViewBag.hinhanh4)" alt=""></a>
+                    <a data-fancybox="gallery" href="@Url.Content(ViewBag.hinhanh5)"><img src="@Url.Content(ViewBag.hinhanh5)" alt=""></a>
+                    <a data-fancybox="gallery" href="@Url.Content(ViewBag.hinhanh5)"><img src="@Url.Content(ViewBag.hinhanh5)" alt=""></a>
+                </div>*@
+            @*  @using (Html.BeginForm("HoaDon", "User"))
+                {
+                    <form>
+                        <div style="border: 1px solid black;background-color: rgb(255, 255, 255);" class="checkbox_sizeCTSP">
+                            <input class="input_check" type="radio" value="S" name="Gander"><label style="margin-left: 5px;" for="sizeM">size S</label>
+                        </div>
+                        <div style="border: 1px solid black;background-color: rgb(255, 255, 255);" class="checkbox_sizeCTSP">
+                            <input class="input_check" type="radio" value="M" name="Gander"><label style="margin-left: 5px;" for="sizeM">size M</label>
+                        </div>
+                        <div style="border: 1px solid black;background-color: rgb(255, 255, 255);" class="checkbox_sizeCTSP">
+                            <input class="input_check" type="radio" value="L" name="Gander"><label style="margin-left: 5px;" for="sizeM">size L</label>
+                        </div>
+                    </form>
+                }*@
+            <div class="Content_ChiTietSanPham">
+                @using (Html.BeginForm("AddToCart", "User"))
+                {
+                    <div style="margin-top:30px; text-align:center;" class="header_contenCTSP">
+                        <i style="font-size: 25px;color: rgb(88, 88, 88);">@ViewBag.TenSanPham</i>
+
+                        <hr style="width:100%;text-align:center" />
+                        <b style="font-size:18px;">@ViewBag.GiaSanPham đ</b>
+                    </div>
+                    <form>
+
+                        <input type="hidden" value="@ViewBag.maDauSanPham" name="ID_sp" />
+                        @foreach (var item in ViewBag.size)
+                        {
+                            if (item.Contains("S"))
+                            {
+
+                                <div style="border: 1px solid black;background-color: rgb(255, 255, 255);" class="checkbox_sizeCTSP">
+                                    <input class="input_check" type="radio" value="S" id="Gander" name="Gander"><label style="margin-left: 5px;" for="sizeM">size S</label>
+                                </div>
+                            }
+                            if (item.Contains("M"))
+                            {
+                                <div style="border: 1spx solid black;background-color: rgb(255, 255, 255);" class="checkbox_sizeCTSP">
+                                    <input class="input_check" type="radio" value="M" id="Gander" name="Gander"><label style="margin-left: 5px;" for="sizeM">size M</label>
+                                </div>
+                            }
+                            if (item.Contains("L"))
+                            {
+                                <div style="border: 1px solid black;background-color: rgb(255, 255, 255);" class="checkbox_sizeCTSP">
+                                    <input class="input_check" type="radio" value="L" id="Gander" name="Gander"><label style="margin-left: 5px;" for="sizeM">size L</label>
+                                </div>
+                            }
+                        }
+                    </form>
+                    {
+                        if (Session["User"] != null)
+                        {
+
+                            <div class="themgiohang">
+                                <a style="color:black;" href="/User/AddToCart/@ViewBag.maDauSanPham"><button style="margin-top:20px; width: 100%; padding: 4px; border-color: black;" id="btn1">THÊM VÀO GIỎ HÀNG</button></a>
+                            </div>
+                            <div class="muasanpham">
+                                <button style="margin-top:10px; width: 100%;  padding: 4px">MUA NGAY</button>
+                            </div>
+                            <div class="Content_chitiet" style="padding-left: 10px;margin-top: 10px;">
+                                <b>Chi tiết sản phẩm:</b>
+                                <p>@ViewBag.GhiChu</p>
+                            </div>
+                        }
+                        else
+                        {
+                            <br />
+                            <div style="width:100%;text-align:center;margin-top:20px;">
+                                <br />
+                                <i style=" color:orangered;">Vui lòng, đăng nhập để đặt hàng!</i>
+                                <div class="muasanpham">
+                                    <a href="@Url.Action("Login", "User")"> <button style="margin-top:10px; width: 90%;  padding: 4px">Đăng Nhập</button></a>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container poster_CTSP">
+        <!-- <hr style="width:2px; background-color: black; border: solid;"> -->
+        <div class="titel_poster_CTSP" style="text-align: center; width:100%">
+            <label><h3 class="a">GỢI Ý DÀNH CHO BẠN</h3></label>
+        </div>
+
+        <div class="wrapper wrapper_CTSP">
+            @foreach (var item in ViewBag.listDauSanPham)
+            {
+                if (item.soluongSP > 0)
+                {
+                    <div class="item item_CTSP">
+                        <div class="wrarap_Sanpham">
+                            <a style="text-decoration:none;" href="@Url.Action("ChiTietSanPham","User",new { id=item.maDSP})"> <img class="img_sanphamWP" src="@Url.Content(item.hinhanhSP)"></a>
+                            <div class="tenSP_WP"><b>@item.tenSP</b></div>
+                            <div class="price_sanphamWP"><b>@item.giaSP đ</b></div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+
+        <div class="titel_poster_CTSP" style="text-align: center; width:100%">
+            <label><h3 class="b">SẢN PHẨM LIÊN QUAN</h3></label>
+        </div>
+        <div style="width:100%; text-align: center;" class="row  row-cols-1 row-cols-sm-2 row-cols-md-4">
+            @foreach (var item in ViewBag.listDauSanPham)
+            {
+                if (item.loaiSP == @ViewBag.LoaiSanPham && item.maDSP != @ViewBag.maDauSanPham)
+                {
+                    if (item.soluongSP != 0)
+                    {
+                        <div style="border-radius:7px;" class="col-4 item_sanpham">
+                            <a style="text-decoration:nonse;" href="@Url.Action("ChiTietSanPham","User",new { id=item.maDSP})">
+                                <img class="img_sanpham" src="@Url.Content(item.hinhanhSP)">
+                            </a>
+                            <div><b  class="name_sanpham">@item.tenSP</b></div>
+                            <div><b  class="price_sanpham">@item.giaSP đ</b></div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="~/Scripts/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/script.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/Fancybox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
+

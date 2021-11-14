@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Code_CH.Models.BaoCaoDatHang>
+
+@{
+    ViewBag.Title = "BaoCaoDonHangDaBan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    @using (Html.BeginForm("DS_DonDatHang", "Home"))
+    {
+        <div class="Header_Dau_Sach">
+            <div class="row align-items-center ">
+                <div class="col-md-6 ">
+                    <h3 class="Dau-sach-header-content">DS Báo Cáo Đơn Hàng Thành Công (<strong style="color:red;"> @ViewBag.countBaoCao </strong>)</h3>
+                </div>
+                <div class="col-md-4 DauSach-btn-search">
+                    <input type="search" placeholder="Nhập ngày lên tháng..." name="_name">
+                </div>
+              @*  <div class="col-md-4">
+                    <a class="DauSach-btn-add" href="@Url.Action("DS_DonDaLen", "Home")"><i class="fas fa-angle-double-right"></i></a>
+                </div>*@
+            </div>
+        </div>
+
+        <div class="mess-error-changePass">@ViewBag.Mess_BlockTaiKhoan <!--Mật khẩu không trùng khớp!--></div>
+        <div style="color:red;"><h4>@ViewBag.Mess_BlockTaiKhoan</h4></div>
+        <h1>@ViewBag.tenKH </h1>
+        <div class="list_DauSach_table">
+            <table class="table_DauSach">
+                <thead>
+                    <tr>
+                        <td>Mã Báo Cáo</td>
+                        <td>Mã HD</td>
+                        <td>Mã KH</td>
+                        <td>Số Lượng Sản Phẩm</td>
+                        <td>Ngày đặt</td>
+                        <td>Giá</td>
+                    
+                        <td class="table_DauSach_ChucNang"></td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        if (item.giaTien > 1000000)
+                        {
+                            <tr class="hight" style="color:red;background-color:aquamarine;">
+                                <td class="table_DauSach_MaSach">@Html.DisplayFor(a => item.maBaoCaoDatHang)</td>
+                                <td class="table_DauSach_MaSach">@Html.DisplayFor(a => item.maDH)</td>
+                                <td class="tenKH">@Html.DisplayFor(a => item.maKH) @ViewBag.tenKH  </td>
+                                <td class="emailKH">@Html.DisplayFor(a => item.soluongSP)</td>
+                                <td class="emailKH">@Html.DisplayFor(a => item.ngayDat)</td>
+                                <td class="table_DauSach_soluong" style="width:40px;">@Html.DisplayFor(a => item.giaTien)</td>
+
+                                <td class="theTV-btn">
+
+                                    <a style="margin-right:10px;" class="block" href="@Url.Action("BlockTaiKhoanKhachHang", "Home", new { id = item.maKH })"><i class="fas fa-handshake"></i></a>
+                                    <a onclick="return confirm('Bạn chắc chắc muốn xóa sản phẩm    với mã @Html.DisplayFor(a=>item.maDH)')" href="@Url.Action("","Home",new { id=item.maBaoCaoDatHang})"><i class="fas fa-trash-alt"><!-- Xoá --></i></a>
+                                    @*<a class="del" onclick="return confirm('Bạn chắc chắn muôn xóa tài khoản tên ) này ?')" href="@Url.Action("XoaTaiKhoan", "Home", new { id = item.maKH })"><i class="fas fa-trash-alt"></i></a>*@
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr >
+                                <td class="table_DauSach_MaSach">@Html.DisplayFor(a => item.maBaoCaoDatHang)</td>
+                                <td class="table_DauSach_MaSach">@Html.DisplayFor(a => item.maDH)</td>
+                                <td class="tenKH">@Html.DisplayFor(a => item.maKH) @ViewBag.tenKH  </td>
+                                <td class="emailKH">@Html.DisplayFor(a => item.soluongSP)</td>
+                                <td class="emailKH">@Html.DisplayFor(a => item.ngayDat)</td>
+                                <td class="table_DauSach_soluong" style="width:40px;">@Html.DisplayFor(a => item.giaTien)</td>
+
+                                <td class="theTV-btn">
+
+                                    <a style="margin-right:10px;" class="block" href="@Url.Action("BlockTaiKhoanKhachHang", "Home", new { id = item.maKH })"><i class="fas fa-handshake"></i></a>
+                                    <a onclick="return confirm('Bạn chắc chắc muốn xóa sản phẩm    với mã @Html.DisplayFor(a=>item.maDH)')" href="@Url.Action("","Home",new { id=item.maBaoCaoDatHang})"><i class="fas fa-trash-alt"><!-- Xoá --></i></a>
+                                    @*<a class="del" onclick="return confirm('Bạn chắc chắn muôn xóa tài khoản tên ) này ?')" href="@Url.Action("XoaTaiKhoan", "Home", new { id = item.maKH })"><i class="fas fa-trash-alt"></i></a>*@
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    }
+</body>
+
+
+

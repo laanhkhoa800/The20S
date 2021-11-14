@@ -1,0 +1,6 @@
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\bin\Debug\Common.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\bin\Debug\Common.pdb
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.pdb

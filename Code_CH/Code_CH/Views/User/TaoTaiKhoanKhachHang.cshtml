@@ -1,0 +1,180 @@
+﻿@model Code_CH.Models.TaiKhoanKhachHang
+
+@{
+    ViewBag.Title = "TaoTaiKhoanKhachHang";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken();
+<head>
+   
+    <link href="~/Assets/teamples_User/MainUser.css" rel="stylesheet" />
+</head>
+    <div class="login_register">
+        <div style="text-align:center;box-shadow:0 2px 10px black; background-color:black; z-index:0;opacity:0.8;" class="register">
+            <div style="z-index:1;">
+                <div class="">
+                    <H3 style="color: red;font-family: monospace;">ĐĂNG KÍ TÀI KHOẢN</H3>
+                </div>
+                <div class="">
+                    <div class="line-or"></div>
+                    <h4 class="Message_error">@ViewBag.Error</h4>
+                    @*    @if (ViewBag.Error == null)
+            {
+                <h4 style="text-align:center;color:red">@ViewBag.Error</h4>
+            }*@
+                </div>
+
+                <div class="register-field">
+                    <i class="login-icon fas fa-user"></i>
+                    <input type="text" class="register-input" placeholder="Nhập họ và tên" required name="_hoten">
+                    @*                    @Html.EditorFor(model => model.tenKH, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập họ và tên", @style = "border:none", @required = "" } })
+            @Html.ValidationMessageFor(model => model.tenKH, "", new { @class = "text-danger", })*@
+                </div>
+
+                <div class="register-field">
+                    <i class="login-icon  fas fa-map-marker-alt"></i>
+                    <input type="text" class="register-input" placeholder="Nhập địa chỉ" required name="_diachi">
+                    @*     @Html.EditorFor(model => model.diachiKH, new { htmlAttributes = new { @class = "form-control", @required = "Nhập số nhà, phường, xã", @placeholder = "Nhập địa chỉ", @style = "border:none" } })
+            @Html.ValidationMessageFor(model => model.diachiKH, "", new { @class = "text-danger" })*@
+
+                </div>
+                <div class="register-field">
+                    @* <i class="register-icon  fas fa-map-marker-alt"></i>*@
+                    @*<input type="text" class="register-input" placeholder="Nhập họ và tên" required name="_hoten">*@
+
+                    @using (Html.BeginForm("DatHang", "User"))
+                    {
+                        <form>
+                            <select class="tinh_thanhpho" name="calc_shipping_provinces" required="">
+                                <option value="" style="overflow-x:hidden;">Tỉnh / Thành phố</option>
+                            </select>
+                            <select class="quan_huyen" name="calc_shipping_district" required="">
+                                <option value="">Quận / Huyện</option>
+                            </select>
+                            <input class="billing_address_1" name="billing_address_1" type="hidden">
+                            <input class="billing_address_2" name="billing_address_2" type="hidden">
+                        </form>
+                    }
+                </div>
+
+                <div class="register-field">
+                    <i class="login-icon  far fa-envelope"></i>
+                    <input type="text" class="register-input" placeholder="Nhập Email ..." required id="email" name="email">
+                    @*   @Html.EditorFor(model => model.emailKH, new { htmlAttributes = new { @class = "form-control", @required = "Nhập email", @placeholder = "Nhập email", @style = "border:none" } })
+            @Html.ValidationMessageFor(model => model.emailKH, "", new { @class = "text-danger" })*@
+                </div>
+                <div class="register-field">
+                    <i class="login-icon fas fa-phone-alt"></i>
+                    <input type="text" class="register-input" placeholder="Nhập số điện thoại" required name="_sodienthoai">
+                    @*            @Html.EditorFor(model => model.sodienthoaiKH, new { htmlAttributes = new { @class = "form-control", @required = "Nhập số điện thoại", @placeholder = "Nhập số điện thoại", @style = "border:none" } })
+            @Html.ValidationMessageFor(model => model.sodienthoaiKH, "", new { @class = "text-danger" })*@
+                </div>
+
+                <div class="register-field ">
+                    <i class="login-icon fas fa-lock"></i>
+                    <input type="password" style="border:none;" class="register-input " placeholder="Nhập Password" required name="_password">
+                    @*    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @required = "Nhập Mật Khẩu", @placeholder = "mật khẩu", @style = "border:none", @type = "password" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })*@
+
+                </div>
+                <div class="register-field register-input-pass">
+                    <i class="fas fa-check-double"></i>
+                    <input type="password" style="border:none;" class="register-input " placeholder="Nhập lại mật khẩu" required name="ConfirmPass">
+                    @*@Html.PasswordFor(model => model.ConfirmPass, new { @placeholder = "Nhập lại mật khẩu", @class = "register-input" })*@
+                </div>
+                <div class="duongdanquaylai" style="width:100%; text-align:center;">
+                    <a href="@Url.Action("Index", "User")" style="float:left" class="home_back"><i class="fas fa-angle-left"></i> Quay về trang chủ?</a>
+                    <a style="margin-top:10px;" href="@Url.Action("Login","User")" class="page_login"> Đăng nhập?</a>
+                </div>  
+                <button class="register-submit" value="Đăng ký" name="check" value="Check" onclick="checkEmail();">Đăng ký</button>
+            </div>
+            </div>
+</div>
+@*    <script src="~/Scripts/js/email.js"></script>*@
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'></script>
+    <script>
+      
+        if (address_2 = localStorage.getItem('address_2_saved')) {
+            $('select[name="calc_shipping_district"] option').each(function () {
+                if ($(this).text() == address_2) {
+                    $(this).attr('selected', '')
+                }
+            })
+            $('input.billing_address_2').attr('value', address_2)
+        }
+        if (district = localStorage.getItem('district')) {
+            $('select[name="calc_shipping_district"]').html(district)
+            $('select[name="calc_shipping_district"]').on('change', function () {
+                var target = $(this).children('option:selected')
+                target.attr('selected', '')
+                $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+                address_2 = target.text()
+                $('input.billing_address_2').attr('value', address_2)
+                district = $('select[name="calc_shipping_district"]').html()
+                localStorage.setItem('district', district)
+                localStorage.setItem('address_2_saved', address_2)
+            })
+        }
+        $('select[name="calc_shipping_provinces"]').each(function () {
+            var $this = $(this),
+                stc = ''
+            c.forEach(function (i, e) {
+                e += +1
+                stc += '<option value=' + e + '>' + i + '</option>'
+                $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
+                if (address_1 = localStorage.getItem('address_1_saved')) {
+                    $('select[name="calc_shipping_provinces"] option').each(function () {
+                        if ($(this).text() == address_1) {
+                            $(this).attr('selected', '')
+                        }
+                    })
+                    $('input.billing_address_1').attr('value', address_1)
+                }
+                $this.on('change', function (i) {
+                    i = $this.children('option:selected').index() - 1
+                    var str = '',
+                        r = $this.val()
+                    if (r != '') {
+                        arr[i].forEach(function (el) {
+                            str += '<option value="' + el + '">' + el + '</option>'
+                            $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
+                        })
+                        var address_1 = $this.children('option:selected').text()
+                        var district = $('select[name="calc_shipping_district"]').html()
+                        localStorage.setItem('address_1_saved', address_1)
+                        localStorage.setItem('district', district)
+                        $('select[name="calc_shipping_district"]').on('change', function () {
+                            var target = $(this).children('option:selected')
+                            target.attr('selected', '')
+                            $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+                            var address_2 = target.text()
+                            $('input.billing_address_2').attr('value', address_2)
+                            district = $('select[name="calc_shipping_district"]').html()
+                            localStorage.setItem('district', district)
+                            localStorage.setItem('address_2_saved', address_2)
+                        })
+                    } else {
+                        $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>')
+                        district = $('select[name="calc_shipping_district"]').html()
+                        localStorage.setItem('district', district)
+                        localStorage.removeItem('address_1_saved', address_1)
+                    }
+                })
+            })
+        })
+      
+//]]></script>
+
+}
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+*@

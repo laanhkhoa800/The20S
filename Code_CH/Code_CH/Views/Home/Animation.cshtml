@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Code_CH.Models.Animation>
+
+
+@{
+    ViewBag.Title = "Animation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+ 
+        <div class="Header_Dau_Sach">
+            <div class="row align-items-center ">
+                <div class="col-md-8" style="text-align:right;">
+                    <h3 class="Dau-sach-header-content">Hình Ảnh Animation Webside</h3>
+                </div>
+              @*  <div class="col-md-4 DauSach-btn-search">
+                    <input type="search" placeholder="Nhập tên người đặt" name="_name">
+                </div>*@
+                <div class="col-md-4">
+                    <a class="DauSach-btn-add" href="@Url.Action("Add_Animation", "Home", new { id = 1})"><i class="fas fa-images"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_DauSach_table">
+            <table class="table_DauSach">
+                <thead>
+                    <tr>
+                        <td>Image_one</td>
+                        <td>Image_tw0s</td>
+                        <td>Image_three</td>
+                        <td>Image_Four</td>
+                        <td></td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                    <tr>
+                        <td class="diachiKH"><img src="@Url.Content(item.Img_animation_1)" alt="ismg_sanPham" style="width:275px;height:165px"/></td>
+                        <td class="diachiKH"><img src="@Url.Content(item.Img_animation_2)" alt="ismg_sanPham" style="width:275px;height:165px" /></td>
+                        <td class="diachiKH"><img src="@Url.Content(item.Img_animation_3)" alt="ismg_sanPham"style="width:275px;height:165px" /></td>
+                        <td class="diachiKH"><img src="@Url.Content(item.Img_animation_4)" alt="ismg_sanPham" style="width:275px;height:165px" /></td>
+                        <td class="theTV-btn">
+                          @*  <a class="DauSach-btn-add" href="@Url.Action("Add_Animation", "Home",new {id=1 })"><i class="fas fa-images"></i></a>*@
+                            @* <a class="block" href="@Url.Action("BlockTaiKhoanKhachHang", "Home", new { id = item.maKH })"><i class="fas fa-lock"></i></a>
+            <a class="del" onclick="return confirm('Bạn chắc chắn muôn xóa tài khoản tên ) này ?')" href="@Url.Action("XoaTaiKhoan", "Home", new { id = item.maKH })"><i class="fas fa-trash-alt"></i></a>*@
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+</body>
+
+

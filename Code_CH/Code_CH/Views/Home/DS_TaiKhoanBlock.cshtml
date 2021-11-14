@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Code_CH.Models.TaiKhoanKhachHang>
+
+@{
+    ViewBag.Title = "DS_TaiKhoanBlock";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    @using (Html.BeginForm("DS_TaiKhoan", "Home"))
+    {
+        <div class="Header_Dau_Sach">
+            <div class="row align-items-center ">
+                <div class="col-md-4 ">
+                    <h3 class="Dau-sach-header-content">DS tài khoản Block (<strong style="color:red;"> @ViewBag.soluongtaikhoan  </strong>)</h3>
+                </div>
+                <div class="col-md-4 DauSach-btn-search">
+                    <input type="search" placeholder="Nhập số điện thoại...." name="_name">
+                </div>
+                <div class="col-md-4">
+                    <a class="DauSach-btn-add" href="@Url.Action("TaoTaiKhoanKhachHang","User")">Tạo Tài khoản mới</a>
+                </div>
+            </div>
+        </div>
+        <div class="mess-error-changePass">@ViewBag.Mess_BlockTaiKhoan <!--Mật khẩu không trùng khớp!--></div>
+        <div style="color:red;"><h4>@ViewBag.Mess_BlockTaiKhoan</h4></div>
+        <div class="list_DauSach_table">
+            <table class="table_DauSach">
+                <thead>
+                    <tr>
+                        <td>Mã thẻ</td>
+                        <td>Họ tên</td>
+                        <td>Email</td>
+                        <td>Tình trạng</td>
+                        <td>Số điện thoại</td>
+                        <td>Địa chỉ</td>
+                        <td class="table_DauSach_ChucNang"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="table_DauSach_MaSach">@Html.DisplayFor(a => item.maKH)</td>
+                            <td class="tenKH">@Html.DisplayFor(a => item.tenKH)</td>
+                            <td class="emailKH">@Html.DisplayFor(a => item.emailKH)</td>
+                            <td class="table_DauSach_status">
+
+                                <p id="tk_block">Block</p>
+
+                            </td>
+                            <td class="sodienthoaiKH">@Html.DisplayFor(a => item.sodienthoaiKH)</td>
+                            <td class="diachiKH">@Html.DisplayFor(a => item.diachiKH) @Html.DisplayFor(a => item.huyenKH) @Html.DisplayFor(a => item.tinhKH)</td>
+
+                            <td class="theTV-btn">
+                                <a class="fix" href="@Url.Action("ResetPass","Main",new { id=item.emailKH})">@*<i class="fas fa-wrench"></i>*@ Reset password</a>
+                                <a class="block" href="@Url.Action("BlockTaiKhoanKhachHang","Home",new { id=item.maKH})"><i class="fas fa-lock"></i></a>
+                                <a class="del" onclick="return confirm('Bạn chắc chắn muôn xóa tài khoản tên @Html.DisplayFor(a=>item.tenKH) này ?')" href="@Url.Action("XoaTaiKhoan","Home",new {id=item.maKH })"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>}
+</body>
+</html>
+

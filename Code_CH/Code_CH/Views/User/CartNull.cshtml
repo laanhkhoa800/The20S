@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "CartNull";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<div class="container">
+    @*  @using (Html.BeginForm("HoaDon", "User"))
+        {*@
+
+    <div class="mediacreen1">
+        <h3 style=" font-family: 'Times New Roman', Times, serif;font-weight: 700 ;color: rgb(71, 71, 71); ">Giỏ Hàng</h3>
+        <td>Hiện không có sản phẩm nào!</td>
+
+        <div class="divtongcart" style="width:100%;">
+
+            <div class="Cart_sanpham">
+
+                <table class="tab_sanpham1">
+                    <tr class="hangdautb ">
+                        <th class="tb_sanpham ">Sản Phẩm</th>
+                        <th class="tb_soluong ">Số Lượng</th>
+                        <th class="tb_tongtien ">Tổng Tiền</th>
+                        <th class="tb_xoa ">Xóa</th>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+
+
+                </table>
+
+                <input style="" type="hidden" name="TongHoaDon" id="TongHoaDon" value="" />
+                <div style="width:100%; text-align:right;">Tổng: <h4 style="color:red;" name="TongHoaDon">0 </h4> vnđ</div>
+            </div>
+            <div class="Cart_tongtien ">
+                <table class="tab_tongtien " style="width: 100%; ">
+                    <tr>
+                        <!--<td colspan="2 " style="height: 50px; text-align: center; ">
+
+
+                        <input onclick="return confirm('Xác nhận đặt hàng!')" type="submit" id="btn1" value="Đặt Hàng" class="btnthanhtoan " />-->
+                        <!-- <button class="btnthanhtoan " style=" ">Tiếp trục mya sắm</button> -->
+                        <!--</td>-->
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <a href="@Url.Action("Index", "User")"> <button class="btntieptrucmuasam " style=" ">Tiếp trục mua sắm</button></a>
+            </div>
+            <div style="width: 100%;text-align: center;margin-top: 20px; ">
+                <p style="font-weight: 500; ">CÓ THỂ Ở ĐÂY CÓ SẢN PHẨM BẠN ĐANG TÌM</p>
+            </div>
+
+        </div>
+    </div>
+    @*      }*@
+</div>

@@ -1,0 +1,132 @@
+﻿@model Code_CH.Models.Cart
+
+@{
+    ViewBag.Title = "ShowToCart";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@if (Model != null)
+{
+    if (Model != null)
+    {
+      @*  <div>
+            @foreach (var item in Model.Items)
+            {
+                double total = Convert.ToDouble(item._shopping_SanPham.giaSP.Value * item._shopping_quantity);
+                <p>@Html.DisplayFor(model => item._shopping_SanPham.tenSP)</p>
+
+            }
+        </div>*@
+<div class="pageCart">
+    <body>
+        @using (Html.BeginForm("DatHang", "User"))
+        {
+            if (Session["ThanhCong"] == "suss")
+            {
+                <script type="text/javascript">
+                            alert('Đặt hàng thành công !');
+                </script>
+                Session["ThanhCong"] = null;
+            }
+            else if (Session["KhongThanhCong"] == "fail")
+            {
+                <script type="text/javascript">
+                            alert('Sorry! Đặt Hàng Không Thành Công !');
+                </script>
+                Session["ThanhCong"] = null;
+            }
+        }
+            <div class="container">
+                @*  @using (Html.BeginForm("HoaDon", "User"))
+                {*@
+                <h1>@ViewBag.nullsize</h1>
+                <div class="mediacreen1">
+                    <h3 style=" font-family: 'Times New Roman', Times, serif;font-weight: 700 ;color: rgb(71, 71, 71); ">Giỏ Hàng</h3>
+                    <div class="divtongcart" style="width:100%;">
+                        <div class="Cart_sanpham">
+                            @using (Html.BeginForm("HoaDon", "User"))
+                            {
+                                <table class="tab_sanpham1">
+                                    <tr class="hangdautb ">
+                                        <th class="tb_sanpham ">Sản Phẩm</th>
+                                        <th class="tb_soluong ">Số Lượng</th>
+                                        <th class="tb_tongtien ">Tổng Tiền</th>
+                                        <th class="tb_xoa ">Xóa</th>
+                                    </tr>
+                                    @foreach (var item in Model.Items)
+                                    {
+                                        double total = Convert.ToDouble(item._shopping_SanPham.giaSP.Value * item._shopping_quantity);
+                                        <tr>
+                                            @*<h1>@item._sanpham_size</h1>*@
+                                            <td style="width:100%;float: left;">
+                                                <div style="float: left;width: 60%;">
+                                                    <img class="img_sanpham_cart" src="@Url.Content(item._shopping_SanPham.hinhanhSP)">
+                                                </div>
+                                                <div>
+
+                                                    @*      <h1>@ViewBag.size</h1>*@
+                                                    <input type="hidden" value="" name="MaSanPham" />
+                                                    <p>@Html.DisplayFor(model => item._shopping_SanPham.tenSP)</p>
+                                                    <p>@ViewBag.size</p>
+                                                    <p>@Html.DisplayFor(model => item._shopping_SanPham.giaSP) đ</p>
+                                                  @*  <p>@Html.DisplayFor(model => item._shopping_SanPham.size)</p>
+                                                    <p>@Html.DisplayFor(model => item._shopping_SanPham.maSP)</p>*@
+                                                  
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="pagination">                                           
+                                                    @using (Html.BeginForm("update_quatity_", "User"))
+                                                    {
+                                                        <input type="hidden" value="@item._shopping_SanPham.maDSP" name="ID_sanpham" />
+                                                        <input style="width:30%;" type="number" value="@item._shopping_quantity" id="Quatity" name="Quatity" />
+                                                        <button class="inp_soluongsp" style="padding:0px 3px" value="OK">Ok</button>
+                                                    }
+                                                </div>
+                                            </td>
+                                            <input type="hidden" id="TongofSP" name="TongofSP" value="@total" />
+                                            <td>@total đ</td>
+                                            <td>
+                                                <a href="/User/Remove_CartItem/@item._shopping_SanPham.maDSP"> <i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </table>
+                            }
+                            <input style="" type="hidden" name="TongHoaDon" id="TongHoaDon" value="@Model.Total_shopping()" />
+                            <div style="width:100%; text-align:right;">Tổng: <h4 style="color:red;" name="TongHoaDon">@Model.Total_shopping() </h4>vnđ</div>
+                        </div>
+                        <div class="Cart_tongtien ">
+                            <table class="tab_tongtien " style="width: 100%; ">
+                                <tr>
+                                    <td colspan="2 " style="height: 50px; text-align: center; ">
+
+
+                                        <a href="/User/HoaDon"> <input type="submit" id="btn1" value="Đặt Hàng" class="btnthanhtoan " /></a>
+                                        <!-- <button class="btnthanhtoan " style=" ">Tiếp trục mya sắm</button> -->
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <a href="@Url.Action("Index", "User")"> <button class="btntieptrucmuasam " style=" ">Tiếp trục mua sắm</button></a>
+                        </div>
+                        <div style="width: 100%;text-align: center;margin-top: 20px; ">
+                            <p style="font-weight: 500; ">CÓ THỂ Ở ĐÂY CÓ SẢN PHẨM BẠN ĐANG TÌM</p>
+                        </div>
+
+                    </div>
+                </div>
+                @*      }*@
+            </div>
+            @*    }*@
+
+</div>
+
+    }
+}
+else
+{
+    <h2>Giỏ hàng rỗng</h2>
+}

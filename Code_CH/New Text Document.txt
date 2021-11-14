@@ -1,0 +1,78 @@
+<div class="nav_black">
+        <ul class="nav_ul">
+            <li class="nav_li imglogo">
+                <a href="@Url.Action("Index")"><img src="~/Content/Image/Logo_store.png" alt="logoGrand" /></a>
+            </li>
+            <li class="nav_li namestore"><a style="font-size:26px;text-decoration:none;" class="" href="@Url.Action("Index")">The_2oS</a></li>
+            <div class="nav_center">
+                <li class="nav_li dropdown1">
+                    <a class="nav-link nav_color dropdown1" style="color:black;" href="#" id="dropdown1" role="button" data-toggle="dropdown">
+                        SHOP
+                    </a>
+                    <div style="font-size: 18px;" class="dropdown-content1">
+                        <a class="dropdown-item" href="@Url.Action("T_Shirl")">T-SHIRTS</a>
+                        <a class="dropdown-item" href="@Url.Action("POLO")">POLO SHIRTS</a>
+                        <a class="dropdown-item" href="@Url.Action("SWEATERS")">SWEATERS</a>
+                        @*       <a class="dropdown-item" href="#">SWEAT-SHIRTS</a>*@
+                        <a class="dropdown-item" href="@Url.Action("HOODIES")">HOODIES</a>
+                        <a class="dropdown-item" href="@Url.Action("Index")">ALL</a>
+                    </div>
+                </li>
+                <li class="nav_li ">
+                    <a class="nav-link nav_color" style="color:black;" href="#">RESTOCKS</a>
+                </li>
+                <li class="nav_li">
+                    <a class="nav-link nav_color" style="color:black;" href="#">SALES</a>
+                </li>
+
+                <li class="nav_li">
+                    <a class="nav-link nav_color" style="color:black;" href="#" tabindex="-1" aria-disabled="true">CONTACT</a>
+                </li>
+                <li class="nav_li">
+                    <a class="nav-link nav_color" style="color:black;" href="@Url.Action("About","User")">ABOUT<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav_li dropdown1">
+                    <a class="nav-link nav_color"><img id="imgsearch" src="~/Content/Image/icon/search.png"</a>
+                    <div style="font-size: 18px;margin-top:0px;border-radius: 8px;" class="dropdown-content1">
+                        <div class="login-field2">
+                            <input type="text" class="login-input" style="color:black;" placeholder="Search.." required name="search">
+                            <i class="login-icon fas fa-search"></i>
+                        </div>
+                    </div>
+                </li>
+            </div>
+            <li class="nav-li funsion_header1 dropdown1">
+                @{ if (Session["User"] != null)
+                    {
+                        @* <a href="#" style="text-decoration:none;">*@ <i id="dropdown1" class="icon admin" style="color: black;">Xin Chào! @Session["User"]</i>
+                        <div style="font-size: 18px;" class="dropdown-content1">
+                            <a class="dropdown-item" href="@Url.Action("DetailTaiKhoan", "User")">Thông tin</a>
+                            <a class="dropdown-item" href="@Url.Action("ChangePass", "User")">Đổi Mật Khẩu</a>
+                            <a onclick="return confirm('Bạn chắc chắn muốn Đăng xuất tài khoản @Session["User"]')" class="dropdown-item" href="@Url.Action("Logout", "User")">Đăng Xuất</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <img class="btn_search dropdown1" src="~/Content/Image/icon/user.PNG" alt="iconsearch" />
+                        <div style="font-size: 18px;" class="dropdown-content1">
+                            <a class="dropdown-item" href="@Url.Action("Login", "User")">Đăng Nhập</a>
+                            <a class="dropdown-item" href="@Url.Action("TaoTaiKhoanKhachHang", "User")">Đăng Ký</a>
+                        </div>
+                    }
+                }
+            </li>
+            <li class="nav-li funsion_header ">
+                @if (Session["User"] != null)
+                {
+                    <a href="/User/ShowToCart"> <button type="button" class="btn_search"><img class="" src="~/Content/Image/icon/shopping-bag.png" alt="iconsearch" /></button></a>
+                    @Html.Action("BagCart", "User")
+                }
+                else
+                {
+                    <a href="/User/CartNull"> <button type="button" class="btn_search"><img class="" src="~/Content/Image/icon/shopping-bag.png" alt="iconsearch" /></button></a>
+                    @Html.Action("BagCart", "User")
+                }
+            </li>
+       </ul>
+    </div>

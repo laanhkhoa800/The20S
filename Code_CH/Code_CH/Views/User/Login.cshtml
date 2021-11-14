@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<body>
+    @using (Html.BeginForm("Login", "User"))
+    {
+    <div class="login_begin">
+        @* <img style="border-radius:20px;" src="~/Content/Image/Logo_store.png" alt="logo_The2oS">*@
+        <h4 style="text-align:center;color:red">@ViewBag.ErrorLogin</h4>
+        <div class="login">
+            <div class="header-login">
+
+                <h2>The20S</h2>
+            </div>
+            <div class="line">
+                <div class="line-or"></div>
+            </div>
+
+            <div class="login-field">
+                <i class="login-icon fas fa-user"></i>
+                <input type="text" class="login-input" placeholder="Nhập email" required name="em">
+            </div>
+            <div class="login-field login-input-pass">
+                <i class="login-icon fas fa-lock"></i>
+                <input type="password" class="login-input " placeholder="Nhập mật khẩu" required name="pass">
+            </div>
+            <div class="row" style="width:100%;margin-top:40px;">
+                <div class="quaylaitrangchu">
+                    <a href="@Url.Action("Index","User")" class="home_back" style="color:white;"><i class="fas fa-angle-left"></i> Quay về trang chủ?</a>
+                </div>
+                <div class="Dangly">
+                    <a href="@Url.Action("TaoTaiKhoanKhachHang","User")" class="page_register"> Đăng ký</a>
+                </div>
+            </div>
+            <button type="submit" class="login-submit">Login</button>
+        </div>
+        <form action="javascrip:void(0);" class="login"></form>
+    </div>}
+
+</body>
+
