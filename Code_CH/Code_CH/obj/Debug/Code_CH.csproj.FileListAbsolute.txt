@@ -252,3 +252,7 @@ C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Common.dll
 C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Common.pdb
 C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\PayPal.dll
 C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\PayPal.xml
+C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Code_CH\obj\Debug\Code_CH.csproj.AssemblyReference.cache
+C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Code_CH\obj\Debug\Code_CH.csproj.CoreCompileInputs.cache
+C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Code_CH\obj\Debug\Code_CH.dll
+C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Code_CH\obj\Debug\Code_CH.pdb
