@@ -65,13 +65,13 @@
                                 <a href="@Url.Action("BaoCaoDonHangDaBan","Home")">Báo cáo Đơn Hàng Thành Công</a>
 
                                 <a href="">Báo cáo sản phẩm đã bán</a>
-                              @*  @using (Html.BeginForm("BaoCaoDanhThuCuaHang", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                                {*@
-                                    <a href="@Url.Action("DoanhThuThang","Home")">Báo cáo doanh thu tháng</a>
-                              @*  }*@
-                            </div>
-                        </li>
-                        <li class="dropdown">
+                                @*  @using (Html.BeginForm("BaoCaoDanhThuCuaHang", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {*@
+                                <!--<a href="@Url.Action("DoanhThuThang","Home")">Báo cáo doanh thu tháng</a>-->
+                                @*  }*@
+                                <!--</div>
+    </li>-->
+<li class="dropdown">
                             <a class="dropbtnt" href="@Url.Action("DS_TaiKhoan","Home")">Quản lí khách hàng</a>
                             <div class="dropdown-contentt">
                               
@@ -81,7 +81,7 @@
                             </div>
                         </li>
                         
-                      @*  <li class="dropdown" style="margin-left:410px;">
+                     @*   <li class="dropdown" style="margin-left:410px;">
                             <a class="dropbtnt">
                                 <img src="~/Content/image/icon/user.png" alt="icon_user" style="width:23px;height: 23px;"> admin
                             </a>
@@ -94,7 +94,9 @@
                 </div>
             </div>
         </nav>
-        @RenderBody()
+        <div class="" style="margin-top:60px;">
+            @RenderBody()
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

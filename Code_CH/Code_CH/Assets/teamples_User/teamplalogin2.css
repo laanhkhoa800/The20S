@@ -739,11 +739,11 @@ tbody > tr:hover {
 .page_login {
     text-decoration: none;
     display: inline-block;
-    text-align: right;
+    text-align: start;
     color: #229b6a;
     font-weight: 600;
     font-size: 13px;
-    margin-left: 85px;
+    margin-left: 55px;
 }
 
 .mess-error-changePass {
@@ -940,7 +940,7 @@ h4 {
 /**********************************/
 
 .register {
-    width: 400px;
+    width: 350px;
     background-color: white;
     margin: 0px auto;
     padding: 5px 40px 30px 30px;

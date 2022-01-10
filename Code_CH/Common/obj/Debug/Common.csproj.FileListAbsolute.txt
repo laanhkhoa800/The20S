@@ -4,9 +4,9 @@ C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.
 C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.dll
 C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.pdb
-C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Common\bin\Debug\Common.dll
-C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Common\bin\Debug\Common.pdb
-C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Common\obj\Debug\Common.csproj.AssemblyReference.cache
-C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
-C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Common\obj\Debug\Common.dll
-C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Common\obj\Debug\Common.pdb
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\bin\Debug\Common.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\bin\Debug\Common.pdb
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Common\obj\Debug\Common.pdb

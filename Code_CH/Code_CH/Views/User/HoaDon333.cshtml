@@ -1,0 +1,270 @@
+﻿@*@model Code_CH.Models.HD*@
+
+@model Code_CH.Models.Cart
+@{
+    ViewBag.Title = "HoaDon";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<head>
+    <title>Page_User</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./thanhtoan.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="widescreen.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="smallscreen.css">
+
+</head>
+@if (Model != null)
+{
+    <body>
+        @using (Html.BeginForm("DatHang", "User"))
+        {
+            if (Session["ThanhCong"] == "suss")
+            {
+                <script type="text/javascript">
+                    alert('Đăng ký mượn sách thành công!');
+                </script>
+ Session["ThanhCong"] = null;
+            }
+            else if (Session["KhongThanhCong"] == "fail")
+            {
+                <script type="text/javascript">
+                    alert('Không thể mượn do bạn chưa trả sách \nVui lòng trả hết sách trước khi mượn!');
+                </script>
+ Session["ThanhCong"] = null;
+            }
+
+            <h1>@ViewBag.s</h1>
+            <div class="Page_thanhtoan">
+                <div style="text-align: center;width:100%;background-color: rgb(205, 206, 206);">
+                    <h2 style="padding: 10px auto;">@ViewBag.tinh</h2>
+                </div>
+                <div class="page_content">
+                    <div class="page_13" style="">
+                        <div class="content_thongtinnhanhang">
+                            <div style=" background-color:rgb(255, 255, 255);border-radius: 2px;"> <b>Thông tin nhận hàng</b></div>
+                            <div class="noidung">
+                                <div class="noidung_grid">
+                                    <label>Email:</label>
+                                    <input class="text_inp" type="text" value="@ViewBag.emailKH" />
+                                </div>
+                                <div class="noidung_grid">
+                                    <label>Tên Khách hàng:</label>
+                                    <input class="text_inp" type="text" value="@ViewBag.tenKH" />
+                                </div>
+                                <div class="noidung_grid">
+                                    <label>Số điện thoại</label>
+                                    <input class="text_inp" type="text" value="@ViewBag.sdtKH" />
+                                </div>
+                                <div class="noidung_grid">
+                                    <label>Địa chỉ</label>
+                                    <input class="text_inp" type="text" value="@ViewBag.diachiKH, @ViewBag.diachihuyen, @ViewBag.diachitinh" />
+                                </div>
+                                <div class="noidung_grid">
+                                    <label>Tỉnh / Thành phố</label>
+                                    <input class="text_inp" type="text" value="@ViewBag.diachitinh" name="thanhphoKH" />
+                                </div>
+                                @*   <form>
+                                        <select name="calc_shipping_provinces" required="@ViewBag.diachitinh">
+                                            <option value="@ViewBag.diachitinh">@ViewBag.diachitinh</option>
+                                        </select>
+
+                                        <input class="billing_address_1" name="billing_address_1" type="hidden">
+
+                                    </form>*@
+                                @*  @using (Html.BeginForm("DatHang", "User"))
+                                    {
+                                    <form>
+                                        <select name="calc_shipping_provinces" required="">
+                                            <option value="@ViewBag.diachitinh">Tỉnh / Thành phố</option>
+                                        </select>
+                                        <select name="calc_shipping_district" required="">
+                                            <option value="@ViewBag.diachihuyen">Quận / Huyện</option>
+                                        </select>
+                                        <input class="billing_address_1" name="billing_address_1" type="hidden" >
+                                        <input class="billing_address_2" name="billing_address_2" type="hidden" >
+                                    </form>
+                                    }*@
+                                <textarea style="width:100%" placeholder="Ghi chú" type="text" name="ghichuHD"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="content_vanchuyen">
+                            <div style="width:100%; background-color:rgb(0, 0, 0);border-radius: 2px;color: white;"> <b style="padding-left: 10px;">Vận chuyển</b></div>
+                            <div class="giaohangtannoi" style="padding-top: 7px;padding-bottom: 7px;">
+                                <i style="padding-left: 10px;width: 60%;float: left;"><i class="fas fa"></i>Giao hàng tận nơi</i>
+                                <b style="width:40%;float:right;text-align: end;">@ViewBag.phiship</b>
+                            </div>
+                            <div style="margin-top:20px;" class="hinhthucthanhtoan">
+                                <div style="width:100%; background-color:rgb(0, 0, 0);border-radius: 2px;color: white;"> <b style="padding-left: 10px;">Thanh Toán</b></div><br>
+                                <i style="padding-left: 10px; color: rgb(194, 6, 6);"> Để thanh toán khi nhận hàng bạn vui lòng chọn -> <b style="color:black;">Đặt Hàng</b></i><br />
+                                <i style="padding-left: 10px; color: rgb(194, 6, 6);"> Để thanh toán online qua PayPal bạn vui lòng chọn -> <b style="color:black;">PayPal</b></i>
+                            </div>
+                        </div>
+                        <div class="content_ItemSanPham">
+
+                            <div style="width:100%; background-color:rgb(0, 0, 0);border-radius: 2px;color: white;"> <b style="padding-left: 10px;"><b>Đơn Hàng </b> (sản phẩm)</div>
+
+                            <!-- <hr class="hr_123"> -->
+                            <div class="noidung_donhang">
+                                @foreach (var item in Model.Items)
+                                {
+                                    @* <h1>@Html.DisplayFor(model => item._sanpham_size)</h1>*@
+                                    double total = Convert.ToDouble(item._shopping_SanPham.giaSP.Value * item._shopping_quantity);
+                                    <table class="noidung_donhang">
+
+                                        <tr class="item_sanpham123">
+                                            <td class="img_1">  <img class="img_sanpham_123" src="@Url.Content(item._shopping_SanPham.hinhanhSP)"></td>
+                                            <td class="nd_123">
+                                                <p>@Html.DisplayFor(model => item._shopping_SanPham.tenSP) </p>
+                                                @*   <p style="opacity: 0.8;">@ViewBag.size</p>*@
+                                                @*       <p style="opacity: 0.8;">@Html.DisplayFor(model => item._shopping_SanPham.size)</p>*@
+                                            </td>
+                                            <input type="hidden" id="TongofSP" name="TongofSP" value="@total" />
+                                            <td class="gia_123"><p>@total đ</p></td>
+                                        </tr>
+                                        <input type="hidden" value="@Html.DisplayFor(model=> item._shopping_quantity)" name="Quatity" />
+                                    </table>
+
+                                }
+                            </div>
+                            <table class="tamtinhgia_sanpham">
+                                <tr class="tamtinhgia_sanpham">
+                                    <td class="right_tamtinhgia">Tạm tính</td>
+                                  @*  <td class="left_tamtinhgia">@Model.Total_shopping()  đ</td>*@
+                                </tr>
+                            </table>
+                            <table class="tamtinhgia_sanpham">
+                                <tr class="tamtinhgia_sanpham">
+                                    <td class="right_tamtinhgia">Phí vận chuyển</td>
+                                    <td class="left_tamtinhgia">@ViewBag.phiship đ</td>
+                                    <input style="" type="hidden" name="_phiship" id="_phiship" value="@ViewBag.phiship" />
+                                </tr>
+                            </table>
+                            <div class="tonghoadon_123">
+
+                                <div class="right_tamtinhgia">Tổng cộng</div>
+                                <div class="left_tamtinhgia">
+                                    <input style="" type="hidden" name="TongHoaDon" id="TongHoaDon" value="@ViewBag.tong" />
+                                    <h3 style="color:rgb(57, 149, 255);">@ViewBag.tong đ</h3>
+                                </div>
+                            </div>
+
+                            <div class="tonghoadon_1234" style="margin-top:20px;">
+                                <div class="">
+                                    <input type="submit" class="btn_thanhtoan_123" value="Đặt Hàng"></input>
+                                </div>
+                                <div class="btn-paypal-mail">
+
+                                    @*    <button class="btn-paypal"><img class="logo_paypal"  src="~/Content/Image/icon/paypal.png" /> <p style="float:right;text-align:start;">Pay</p><bstyle="float:right;>Pal</bstyle="float:right;></button>*@
+                                </div>
+                            </div>
+
+                            <div class="tonghoadon_1234" style="margin-top:20px;">
+                                <div class="right_tamtinhgi" style="padding-left:5px;">
+                                    <a href="/User/ShowToCart"><i class="fas fa-angle-double-left"></i>Quay về giỏ hàng</a>
+                                </div>
+                                @*  <div class="left_tamtinhgi">
+                                        <input type="submit" class="btn_thanhtoan_123" value="Đặt Hàng"></input>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'></script>
+        <script>
+            //<![CDATA[
+            if (address_2 = localStorage.getItem('address_2_saved')) {
+                $('select[name="calc_shipping_district"] option').each(function () {
+                    if ($(this).text() == address_2) {
+                        $(this).attr('selected', '')
+                    }
+                })
+                $('input.billing_address_2').attr('value', address_2)
+            }
+            if (district = localStorage.getItem('district')) {
+                $('select[name="calc_shipping_district"]').html(district)
+                $('select[name="calc_shipping_district"]').on('change', function () {
+                    var target = $(this).children('option:selected')
+                    target.attr('selected', '')
+                    $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+                    address_2 = target.text()
+                    $('input.billing_address_2').attr('value', address_2)
+                    district = $('select[name="calc_shipping_district"]').html()
+                    localStorage.setItem('district', district)
+                    localStorage.setItem('address_2_saved', address_2)
+                })
+            }
+            $('select[name="calc_shipping_provinces"]').each(function () {
+                var $this = $(this),
+                    stc = ''
+                c.forEach(function (i, e) {
+                    e += +1
+                    stc += '<option value=' + e + '>' + i + '</option>'
+                    $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
+                    if (address_1 = localStorage.getItem('address_1_saved')) {
+                        $('select[name="calc_shipping_provinces"] option').each(function () {
+                            if ($(this).text() == address_1) {
+                                $(this).attr('selected', '')
+                            }
+                        })
+                        $('input.billing_address_1').attr('value', address_1)
+                    }
+                    $this.on('change', function (i) {
+                        i = $this.children('option:selected').index() - 1
+                        var str = '',
+                            r = $this.val()
+                        if (r != '') {
+                            arr[i].forEach(function (el) {
+                                str += '<option value="' + el + '">' + el + '</option>'
+                                $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
+                            })
+                            var address_1 = $this.children('option:selected').text()
+                            var district = $('select[name="calc_shipping_district"]').html()
+                            localStorage.setItem('address_1_saved', address_1)
+                            localStorage.setItem('district', district)
+                            $('select[name="calc_shipping_district"]').on('change', function () {
+                                var target = $(this).children('option:selected')
+                                target.attr('selected', '')
+                                $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+                                var address_2 = target.text()
+                                $('input.billing_address_2').attr('value', address_2)
+                                district = $('select[name="calc_shipping_district"]').html()
+                                localStorage.setItem('district', district)
+                                localStorage.setItem('address_2_saved', address_2)
+                            })
+                        } else {
+                            $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>')
+                            district = $('select[name="calc_shipping_district"]').html()
+                            localStorage.setItem('district', district)
+                            localStorage.removeItem('address_1_saved', address_1)
+                        }
+                    })
+                })
+            })
+//]]></script>
+
+        <!-- FancyBox -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    </body>
+}
+@if(Model == null)
+{
+<h1>Dữ liệu trống!</h1>
+}
+

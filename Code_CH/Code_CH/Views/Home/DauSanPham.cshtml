@@ -9,7 +9,7 @@
     @using (Html.BeginForm("Index", "Home"))
     {
 
-        <div class="Header_Dau_Sach">
+        <div class="Header_Dau_Sach" style="">
             <div class="row align-items-center ">
                 <div class="col-md-4 ">
                     <h3 class="Dau-sach-header-content"> Danh sách sản phẩm</h3>
@@ -58,6 +58,7 @@
                                 <a onclick="return confirm('Bạn chắc chắc muốn xóa sản phẩm   @Html.DisplayFor(a=>item.tenSP) với mã @Html.DisplayFor(a=>item.maDSP)')" href="@Url.Action("XoaDauSanPham","Home",new { id=item.maDSP})"><i class="fas fa-trash-alt"><!-- Xoá --></i></a>
                                 <a href="@Url.Action("EditUploadImage","Home",new {id=item.maDSP })"><i class="fas fa-images"><!-- Sửa --></i></a>
                                 <a style="text-decoration:none" href="@Url.Action("ThemChiTietSanPham","Home",new { id=item.maDSP})">+SL</a>
+                                <a onclick="return confirm('Bạn chắc chắc muốn nhân đôi sản phẩm   @Html.DisplayFor(a=>item.tenSP) với mã @Html.DisplayFor(a=>item.maDSP)')" href="@Url.Action("DPrototype","Home",new { id=item.maDSP})"><i class="">Double</i></a>
                             </td>
                         </tr>
                     }

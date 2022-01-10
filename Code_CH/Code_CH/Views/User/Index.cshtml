@@ -67,12 +67,12 @@
         </div>
 
         <div class="mediacreen">
-            <div class="tt_MainStore">
+          @*  <div class="tt_MainStore">
                 <h3 class="a">SẢN PHẨM NỔI BẬT</h3>
-            </div>
+            </div>*@
 
             <div class="container" style="">
-                <div class="wrapper wrapper_CTSP">
+              @*  <div class="wrapper wrapper_CTSP">
                     @foreach (var item in Model)
                     {
 
@@ -90,7 +90,7 @@
                         }
 
                     }
-                </div>
+                </div>*@
                 <div class="tt_MainStore">
                     <h3 class="a">GỢI Ý DÀNH CHO BẠN</h3>
                 </div>
@@ -98,7 +98,7 @@
                 <div class="xSanpham">
                     @foreach (var item in Model)
                     {
-                        if (item.soluongSP > 0)
+                        if (item.soluongSP > 0) 
                         {
                             <div class="item_sanpham">
                                 <a href="@Url.Action("ChiTietSanPham", "User", new { id = item.maDSP })">

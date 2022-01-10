@@ -11,8 +11,11 @@ namespace Code_CH.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class SanPham
+    interface ProxySanPham
+    {
+        void addSanPhamDB(CuaHangEntities database);
+    }
+    public partial class SanPham : ProxySanPham
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SanPham()
@@ -30,5 +33,38 @@ namespace Code_CH.Models
         public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public virtual DauSanPham DauSanPham { get; set; }
         public virtual TinhTrangSanPham TinhTrangSanPham { get; set; }
+
+        public void addSanPhamDB(CuaHangEntities database)
+        {
+            database.SanPhams.Add(this);
+            database.SaveChanges();       
+        }
+    }
+    public class Proxy : ProxySanPham
+    {
+        private SanPham _sanpham;
+
+        public Proxy(SanPham sp)
+        {
+            _sanpham = sp;
+        }
+
+        public void addSanPhamDB(CuaHangEntities database)
+        {
+            string notAllowSizeS = "S";
+            string notAllowSizeM = "M";
+            string notAllowSizeL = "L";
+            string notAllowSizeXL = "XL";
+            var checkSizeS = _sanpham.size.Contains(notAllowSizeS);
+            var checkSizeM = _sanpham.size.Contains(notAllowSizeM);
+            var checkSizeL = _sanpham.size.Contains(notAllowSizeL);
+            var checkSizeXL = _sanpham.size.Contains(notAllowSizeXL);
+            if (checkSizeS == true || checkSizeM == true || checkSizeL == true || checkSizeXL == true)
+            {
+                    _sanpham.addSanPhamDB(database);
+            }
+           
+        }
+
     }
 }

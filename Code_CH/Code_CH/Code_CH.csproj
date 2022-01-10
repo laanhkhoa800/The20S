@@ -185,6 +185,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\validateAntiForgrytokenAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -207,9 +208,11 @@
     <Compile Include="Models\DauSanPham.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TaiKhoanIIteratorController.cs" />
     <Compile Include="Models\HD.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\IIteratorController.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -230,6 +233,7 @@
     <Compile Include="Models\SanPham.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SanPhamSingleton.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -283,6 +287,7 @@
     </Content>
     <Content Include="appsettings.Development.json" />
     <Content Include="appsettings.json" />
+    <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\IMG2_scripts.js" />
     <Content Include="Scripts\IMG3_scripts.js" />
@@ -352,12 +357,15 @@
     <Content Include="Views\Home\DoanhThuThang.cshtml" />
     <Content Include="Views\Home\Animation.cshtml" />
     <Content Include="Views\Home\Add_Animation.cshtml" />
+    <Content Include="Views\User\HoaDon333.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Image\icon\" />
     <Folder Include="Content\Image_SanPham\" />
     <Folder Include="Views\Cart\" />
+    <Folder Include="Views\DauSanPhamIIterator\" />
+    <Folder Include="Views\IIterator\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

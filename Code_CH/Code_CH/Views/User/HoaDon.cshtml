@@ -48,19 +48,19 @@
                                     <div class="noidung">
                                         <div class="noidung_grid">
                                             <label>Email:</label>
-                                            <input class="text_inp" type="text" value="@ViewBag.emailKH" />
+                                            <input class="text_inp" type="text" value="@ViewBag.email" />
                                         </div>
                                         <div class="noidung_grid">
                                             <label>Tên Khách hàng:</label>
-                                            <input class="text_inp" type="text" value="@ViewBag.tenKH" />
+                                            <input class="text_inp" type="text" value="@ViewBag.hotenKH" />
                                         </div>
                                         <div class="noidung_grid">
                                             <label>Số điện thoại</label>
-                                            <input class="text_inp" type="text" value="@ViewBag.sdtKH" />
+                                            <input class="text_inp" type="text" value="@ViewBag.sodienthoai" />
                                         </div>
                                         <div class="noidung_grid">
                                             <label>Địa chỉ</label>
-                                            <input class="text_inp" type="text" value="@ViewBag.diachiKH, @ViewBag.diachihuyen, @ViewBag.diachitinh" />
+                                            <input class="text_inp" type="text" value="@ViewBag.diachi, @ViewBag.diachihuyen, @ViewBag.diachitinh" />
                                         </div>
                                         <div class="noidung_grid">
                                             <label>Tỉnh / Thành phố</label>
@@ -73,8 +73,8 @@
 
                                             <input class="billing_address_1" name="billing_address_1" type="hidden">
 
-                                        </form>*@
-                                        @*  @using (Html.BeginForm("DatHang", "User"))
+                                        </form>*@    
+                                          @using (Html.BeginForm("DatHang", "User"))
                                             {
                                             <form>
                                                 <select name="calc_shipping_provinces" required="">
@@ -86,7 +86,7 @@
                                                 <input class="billing_address_1" name="billing_address_1" type="hidden" >
                                                 <input class="billing_address_2" name="billing_address_2" type="hidden" >
                                             </form>
-                                            }*@
+                                            }
                                         <textarea style="width:100%" placeholder="Ghi chú" type="text" name="ghichuHD"></textarea>
                                     </div>
 
@@ -119,8 +119,7 @@
                                                     <td class="img_1">  <img class="img_sanpham_123" src="@Url.Content(item._shopping_SanPham.hinhanhSP)"></td>
                                                     <td class="nd_123">
                                                         <p>@Html.DisplayFor(model => item._shopping_SanPham.tenSP) </p>
-                                                        @*   <p style="opacity: 0.8;">@ViewBag.size</p>*@
-                                                        @*       <p style="opacity: 0.8;">@Html.DisplayFor(model => item._shopping_SanPham.size)</p>*@
+                                                   
                                                     </td>
                                                     <input type="hidden" id="TongofSP" name="TongofSP" value="@total" />
                                                     <td class="gia_123"><p>@total đ</p></td>

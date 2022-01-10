@@ -13,12 +13,12 @@ using System.Collections.Generic;
 
 namespace Code_CH.Controllers
 {
-    public class UserController : Controller
+    public  class UserController : Controller
     {
 
         CuaHangEntities database = new CuaHangEntities();
         // GET: User
-        public ActionResult Index()
+        public  ActionResult Index()
         {
             ViewBag.hethang = "sản phẩm đã hết!";
             var animation = database.Animations.Where(a => a.idAnimation == 1).FirstOrDefault();
@@ -26,7 +26,16 @@ namespace Code_CH.Controllers
             ViewBag.ani2 = animation.Img_animation_2;
             ViewBag.ani3 = animation.Img_animation_3;
             ViewBag.ani4 = animation.Img_animation_4;
-            return View(database.DauSanPhams.ToList());
+            /* return View(database.DauSanPhams.ToList());*/
+            //áp dụng singleton
+
+            // Lỗi thời gian biên dịch: Hàm tạo SingleObject () không hiển thị
+            // Đối tượng SanPhamSingleton = new SanPhamSingleton();
+
+            // Lấy đối tượng duy nhất có sẵn
+            SanPhamSingleton.Instance.Init(database);
+            var listDauSanPham = SanPhamSingleton.Instance.listDauSanPham;
+            return View(listDauSanPham);
         }
         public ActionResult About()
         {
@@ -72,7 +81,7 @@ namespace Code_CH.Controllers
             return View(taikhoankhachhang);
         }
         [HttpPost]
-        public ActionResult TaoTaiKhoanKhachHang(TaiKhoanKhachHang taikhoan,FormCollection form,string _hoten,string email, string _sodienthoai,string _password, string ConfirmPass)
+        public ActionResult TaoTaiKhoanKhachHang(TaiKhoanKhachHang taikhoan,FormCollection form,string _hoten,string email, string _sodienthoai,string _password,string _diachi, string ConfirmPass)
         {
             string tinhthanhpho = form["billing_address_1"].ToString();
             string quanhuyen = form["billing_address_2"].ToString();
@@ -88,19 +97,26 @@ namespace Code_CH.Controllers
                     taikhoan.Password = _password;
                     taikhoan.tinhKH = tinhthanhpho;
                     taikhoan.huyenKH = quanhuyen;
-                    taikhoan.maTT = 2;
+                    taikhoan.maTT = 1;
+                    taikhoan.diachiKH = _diachi;
 
-                  
+
+
                     string content = System.IO.File.ReadAllText(Server.MapPath("~/Assets/email/newoder.html"));
                     content = content.Replace("{{CustomerName}}", taikhoan.tenKH);
                     content = content.Replace("{{Phone}}", taikhoan.sodienthoaiKH);
                     content = content.Replace("{{Email}}", taikhoan.emailKH);
                     content = content.Replace("{{Address}}", taikhoan.diachiKH);
-                    var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+                    /* var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();*/
+                    var toEmail = email;
                     new MailHelper().SendMail(toEmail, "Kích hoạt tài khoản thành công", content);
 
                     database.TaiKhoanKhachHangs.Add(taikhoan);
                     database.SaveChanges();
+
+                    // Áp dụng Proxy
+                   /* ProxyTaiKhoan proxytaikhoan = new ProxyTaiKhoan(taikhoan);
+                    proxytaikhoan.addTaiKhoanDB(database);*/
                     return RedirectToAction("Index", new { @onclick = "return Submit();" });
                 }
                 else
@@ -125,9 +141,9 @@ namespace Code_CH.Controllers
         {
 
             // kiểm tra tài khoản có tồn tại và có bị block hay không ?
-            var check = database.TaiKhoanKhachHangs.Where(a => a.emailKH == em && a.Password == pass && a.maTT == 2 || a.emailKH == em && a.Password == pass && a.maTT == 3).FirstOrDefault();
+            var check = database.TaiKhoanKhachHangs.Where(a => a.emailKH == em && a.Password == pass && a.maTT == 1 || a.emailKH == em && a.Password == pass && a.maTT == 3).FirstOrDefault();
             //Kiểm tra tài khoản có bị block hay không
-            var checkBlock = database.TaiKhoanKhachHangs.Where(a => a.emailKH == em && a.Password == pass && a.maTT == 3).FirstOrDefault();
+            var checkBlock = database.TaiKhoanKhachHangs.Where(a => a.emailKH == em && a.Password == pass && a.maTT == 2).FirstOrDefault();
             if (check != null)
             {
                 Session["User"] = check.tenKH;
@@ -146,24 +162,48 @@ namespace Code_CH.Controllers
             }
         }
 
-        /*Đăng Xuất*/
-        public ActionResult Logout()
+        // Design pattern Template Methol
+        //Check Session
+        public bool CheckTaiKhoan()
         {
-            Session["User"] = null;
-            return RedirectToAction("Index", "User");
+            if (Session["User"] != null)
+                return true;
+            return false;
         }
-
-        /*Đổi mật khẩu*/
-        public ActionResult ChangePass()
+        //ID User
+        public TaiKhoanKhachHang IdentityTaiKhoan()
         {
-            return View();
+            string email = Session["Email"].ToString();
+            TaiKhoanKhachHang tk = database.TaiKhoanKhachHangs.Where(a => a.emailKH == email).SingleOrDefault();
+            return tk;
         }
+        //Get Info Tài khoản
+        public void GetInfoTaiKhoan(TaiKhoanKhachHang tk)
+        {
+       
+            ViewBag.email = tk.emailKH;
+            ViewBag.hotenKH = tk.tenKH;
+            ViewBag.ctTinhTrang = tk.TinhTrangTaiKhoan.tenTinhTrang;
+            ViewBag.sodienthoai = tk.sodienthoaiKH;
+            ViewBag.diachi = tk.diachiKH;
+            ViewBag.diachitinh = tk.tinhKH;
+            ViewBag.diachihuyen = tk.huyenKH;
+        }
+        //Get Tài khoản khách hàng - TemplateMethod pattern
+        public void GetTaiKhoan()
+        {
+            if (CheckTaiKhoan() == true)
+            {
+                GetInfoTaiKhoan(IdentityTaiKhoan());
+            }
+        }
+   
        
         public ActionResult ChangePass(TaiKhoanKhachHang taikhoan, string pass, string newpass, string nhaplaipass)
         {
             string email = Session["Email"].ToString();
             taikhoan = database.TaiKhoanKhachHangs.Where(s => s.emailKH == email && s.Password == pass).FirstOrDefault();
-            //var check = database.Account_Admin.Where(s=>s.Password == _name && s.MaAccount==1).FirstOrDefault();            
+            
             if (taikhoan != null)
             {
                 if (newpass == nhaplaipass)
@@ -298,81 +338,7 @@ namespace Code_CH.Controllers
                 return View(database.DauSanPhams.ToList());
 
         }
-        /*______ Giỏ hàng_____________________________________________________*/
-        /* public Cart GetCart()
-         {
-             Cart cart = Session["Cart"] as Cart;
-             if (cart == null || Session["Cart"] == null)
-             {
-                 cart = new Cart();
-                 Session["Cart"] = cart;
-             }
-             return cart;
-         }
-
-         public ActionResult CartNull()
-         {
-             return View();
-         }
-
-         public ActionResult Cart2()
-         {
-             //if (Session["Cart"] == null)
-             //    return RedirectToAction("Cart", "MainUser");
-
-             if (Session["User"] != null)
-             {
-                 Cart _cart = Session["Cart"] as Cart;
-                 if (_cart == null)
-                 {
-                     return RedirectToAction("CartNull", "User");
-                 }
-                 else
-                 {
-                     ViewBag.TenUse = Session["User"];
-                     ViewBag.MSSV = Session["MSSV"];
-                     return View(_cart);
-                 }
-
-             }
-             else
-             {
-                 return RedirectToAction("Login", "User");
-             }
-         }
-
-         public ActionResult AddToCart(int id)
-         {
-             if (Session["User"] != null)
-             {
-
-                 var sach = database.SanPhams.SingleOrDefault(s => s.maSP == id);
-                 string hinhAnh = sach.DauSanPham.hinhanhSP;
-
-                 if (sach != null)
-                 {
-                   *//*  GetCart().Add_Sach_Cart(sach, hinhAnh);*//*
-                     return RedirectToAction("Index", "MainUser");
-                 }
-                 else
-                 {
-                     return RedirectToAction("Index");
-                 }
-             }
-             else
-                 return RedirectToAction("Login", "MainUser");
-         }
-
-         public ActionResult RemoveCart(int id)
-         {
-             Cart cart = Session["Cart"] as Cart;
-            *//* cart.Remove_CartItem(id);*//*
-             return RedirectToAction("Cart", "MainUser");
-
-         }*/
-
-        /*-------------- Thuê sách  ------------*/
-
+      
 
         public Cart GetCart()
         {
@@ -456,14 +422,14 @@ namespace Code_CH.Controllers
             return View(cart);
 
         }
-        public ActionResult Choose_size(FormCollection form)
+      /*  public ActionResult Choose_size(FormCollection form)
         {
             Cart cart = Session["Cart"] as Cart;
             int id_sp = int.Parse(form["ID_sp"]);
             string _size = form["Gander"];
             cart.Choose_size(id_sp, _size);
             return RedirectToAction("ShowToCart", "User");
-        }
+        }*/
         public ActionResult update_quatity_(FormCollection form)
         {
             Cart cart = Session["Cart"] as Cart;
@@ -513,6 +479,7 @@ namespace Code_CH.Controllers
                             chitietHD.maHD = hoadon.maHD;
                             chitietHD.soluongDatSP = item._shopping_quantity;
                             database.ChiTietHoaDons.Add(chitietHD);
+                          
 
                         }
                         if (aa == 1)
@@ -521,17 +488,12 @@ namespace Code_CH.Controllers
                         }
                         else
                             hoadon.soluong = aa;
-                        /* hoadon.TongHD = TongHoaDon;
-                         hoadon.NgayDat = DateTime.Now;
-                         hoadon.maKH = taikhoan.maKH;
-                         hoadon.ghichuHD = ghichuHD;
-                         hoadon.maTT = 1;
-                         database.HDs.Add(hoadon);
-                         database.SaveChanges();*/
-                        database.SaveChanges();
+
+                   
+
                     }
                 }
-                /* hoadon.ghichuHD = ganderradio;*/
+                
                 hoadon.TongHD = TongHoaDon;
                 hoadon.NgayDat = DateTime.Now;
                 hoadon.maKH = taikhoan.maKH;
@@ -553,42 +515,25 @@ namespace Code_CH.Controllers
         }
 
         /*Hiển thị thông tin user*/
+        // Áp dụng template methol hiển thị Tài khoản khách hàng
         public ActionResult DetailTaiKhoan()
         {
             if (Session["User"] != null)
             {
-                string email = Session["Email"].ToString();
+                /*string email = Session["Email"].ToString();
                 var taikhoan = database.TaiKhoanKhachHangs.Where(a => a.emailKH == email).SingleOrDefault();
                 ViewBag.email = email;
                 ViewBag.hotenKH = taikhoan.tenKH;
                 ViewBag.ctTinhTrang = taikhoan.TinhTrangTaiKhoan.tenTinhTrang;
                 ViewBag.sodienthoai = taikhoan.sodienthoaiKH;
-                ViewBag.diachi = taikhoan.diachiKH;
-                //------------------------------------
-                /*  int SlSach = database.Sach_Dang_Muon.Where(a => a.email == mssv).Count();
-                  var SachMuon = database.Sach_Dang_Muon.Where(a => a.MaThe == mssv).ToList();
-                  var NgayThang = database.Sach_Dang_Muon.Where(a => a.MaThe == mssv).FirstOrDefault();
-                  if (SlSach > 0)
-                  {
-                      ViewBag.ctSoLuong = SlSach;
-                      foreach (var item in SachMuon)
-                      {
-                          ViewBag.SachDangMuon += item.Sach.DauSach.TenSach + ", ";
-                      }
-                      ViewBag.ctNgayMuon = NgayThang.NgayMuon.ToString();
-                      DateTime NgayTra = (DateTime)NgayThang.NgayMuon;
-                      NgayTra = NgayTra.AddDays(15);
-                      ViewBag.ctNgayTra = NgayTra;
-                  }*/
+                ViewBag.diachi = taikhoan.diachiKH;*/
+                GetTaiKhoan();
                 return View();
             }
             else
             {
                 return RedirectToAction("Login", "MainUser");
             }
-
-
-
         }
         public PartialViewResult BagCart()
         {
@@ -603,57 +548,53 @@ namespace Code_CH.Controllers
             return PartialView("BagCart");
         }
 
-      
-
         [HttpGet]
-        public ActionResult HoaDon(TaiKhoanKhachHang taikhoan, FormCollection frm, string thanhphoKH, IConfiguration config)
+        public ActionResult HoaDon( TaiKhoanKhachHang taikhoan, FormCollection frm, string thanhphoKH)
         {
+            Cart ca = Session["Cart"] as Cart;
          /*   _clientId = config["PaypalSettings:ClientId"];
             _secretKey = config["PaypalSettings:SecretKey"];*/
-            Cart cart = Session["Cart"] as Cart;
+            /*Cart cart = Session["Cart"] as Cart;*/
             string email = Session["Email"].ToString();
         /*    string ganderradio = frm["Gander"].ToString();*/
             taikhoan = database.TaiKhoanKhachHangs.Where(a => a.emailKH == email).SingleOrDefault();
             if (Session["User"] != null)
             {
-                ViewBag.diachitinh = taikhoan.tinhKH;
-                ViewBag.diachihuyen = taikhoan.huyenKH;
-                ViewBag.tenKH = taikhoan.tenKH;
-                ViewBag.emailKH = taikhoan.emailKH;
-                ViewBag.sdtKH = taikhoan.sodienthoaiKH;
-                ViewBag.diachiKH = taikhoan.diachiKH;
+                /* ViewBag.diachitinh = taikhoan.tinhKH;
+                 ViewBag.diachihuyen = taikhoan.huyenKH;
+                 ViewBag.tenKH = taikhoan.tenKH;
+                 ViewBag.emailKH = taikhoan.emailKH;
+                 ViewBag.sdtKH = taikhoan.sodienthoaiKH;
+                 ViewBag.diachiKH = taikhoan.diachiKH;*/
+
+                // áp dụng disign pattern tempalte methol vào thông tin khách hàng khi đặt hàng
+                GetTaiKhoan();
                 string tinhship = thanhphoKH;
                 if (taikhoan.tinhKH.Contains("Thành phố Hồ Chí Minh"))
                 {
                     ViewBag.phiship = "25000";
-                    double tong = 25000 + cart.Total_shopping();
+                    double tong = 25000 + ca.Total_shopping();
                     ViewBag.tong = tong;
                 }
                 else
                 {
                     ViewBag.phiship = "35000";
-                    double tong = 35000 + cart.Total_shopping();
+                    double tong = 35000 + ca.Total_shopping();
                     ViewBag.tong = tong;
                 }
             }
-
-
-            /*
-                        ViewBag.size = ganderradio;*/
             if (Session["Cart"] == null)
             {
                 return RedirectToAction("CartNull", "User");
             }
-
-            
-            return View(cart);
+            return View(ca);
         }
 
         //work with Paypal payment
-        private Payment payment;
+
 
         // Create a payment using an APIContext
-        private Payment CreatePayment(APIContext apiContext, string redirectUrl)
+     /*   private Payment CreatePayment(APIContext apiContext, string redirectUrl)
         {
             Cart cart = Session["Cart"] as Cart;
 
@@ -679,11 +620,9 @@ namespace Code_CH.Controllers
                 tax = "1",
                 shipping = "2",
                 subtotal = listCart.Sum(x => x.quatiy_Items );
- /*               Convert.ToDouble(Cart._shopping_SanPham.giaSP.Value * item._shopping_quantity);*/
-        }
-
-
-        }
+         *//* Convert.ToDouble(Cart._shopping_SanPham.giaSP.Value * item._shopping_quantity);*//*
+         }
+        }*/
     }
 
 }

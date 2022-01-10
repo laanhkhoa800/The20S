@@ -88,9 +88,9 @@
                     <input type="password" style="border:none;" class="register-input " placeholder="Nhập lại mật khẩu" required name="ConfirmPass">
                     @*@Html.PasswordFor(model => model.ConfirmPass, new { @placeholder = "Nhập lại mật khẩu", @class = "register-input" })*@
                 </div>
-                <div class="duongdanquaylai" style="width:100%; text-align:center;">
+                <div class="duongdanquaylai"style="display:inline;width:100%; text-align:center;">
                     <a href="@Url.Action("Index", "User")" style="float:left" class="home_back"><i class="fas fa-angle-left"></i> Quay về trang chủ?</a>
-                    <a style="margin-top:10px;" href="@Url.Action("Login","User")" class="page_login"> Đăng nhập?</a>
+                    <a style="margin-top:0px;" href="@Url.Action("Login","User")" class="page_login"> Đăng nhập?</a>
                 </div>  
                 <button class="register-submit" value="Đăng ký" name="check" value="Check" onclick="checkEmail();">Đăng ký</button>
             </div>

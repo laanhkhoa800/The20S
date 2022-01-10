@@ -61,7 +61,10 @@ namespace Code_CH.Controllers
             }
             else
             {
-                return View(database.DauSanPhams);
+                //áp dụng singleton
+                SanPhamSingleton.Instance.Init(database);
+                var listDauSanPham = SanPhamSingleton.Instance.listDauSanPham;
+                return View(listDauSanPham);
             }
         }
         public ActionResult Login()
@@ -170,18 +173,28 @@ namespace Code_CH.Controllers
                 sanpham.imageUploader5.SaveAs(Path.Combine(Server.MapPath("~/Content/Image_SanPham/"), fileName5));
                 sanpham.imageUploader6.SaveAs(Path.Combine(Server.MapPath("~/Content/Image_SanPham/"), fileName6));
                 sanpham.soluongSP = 0;
-                /*    //sanpham.giaSP = gia;
-                    sanpham.hinhanhSP = null;*/
 
+                //áp dụng Design pattern Prototype 
+                /*  var cloneDSP = sanpham.Clone();
+                  database.DauSanPhams.Add((DauSanPham)cloneDSP);*/
                 database.DauSanPhams.Add(sanpham);
                 database.SaveChanges();
-                /*   return RedirectToAction("Index", "Home", sanpham);*/
+              
 
             }
-            return RedirectToAction("Index", "Home", sanpham);
-            //sanpham.tenSP = tenSanPham;
-            //sanpham.loaiSP = theLoai;
+            return RedirectToAction("DauSanPham", "Home", sanpham);
 
+
+        }
+        [HttpGet]
+        [validateAntiForgrytoken]
+        public ActionResult DPrototype(int id)
+        {
+            DauSanPham dausanpham = database.DauSanPhams.Find(id);
+            var cloneDauSanPham = dausanpham.Clone();
+            database.DauSanPhams.Add((DauSanPham)cloneDauSanPham);
+            database.SaveChanges();
+            return RedirectToAction("DauSanPham", "Home");
         }
         /*   [HttpPost]
        public object ThemDauSanPham( DauSanPham dausanpham, string imageUploader, string tenSanPham, string theLoai, float gia)
@@ -240,7 +253,7 @@ namespace Code_CH.Controllers
             database.Entry(DauSanPham).State = System.Data.Entity.EntityState.Modified;
             database.SaveChanges();
             /*ViewBag.SuaDauSach_suss = "Sửa thành công !!!";*/
-            return RedirectToAction("Index", "Home", DauSanPham);
+            return RedirectToAction("DauSanPham", "Home", DauSanPham);
         }
         public ActionResult EditUploadImage(int id)
         {
@@ -259,7 +272,7 @@ namespace Code_CH.Controllers
             database.Entry(DauSanPham).State = System.Data.Entity.EntityState.Modified;
             database.SaveChanges();
             /*ViewBag.SuaDauSach_suss = "Sửa thành công !!!";*/
-            return RedirectToAction("Index", "Home", DauSanPham);
+            return RedirectToAction("EditUploadImage", "Home", DauSanPham);
         }
         [HttpGet]
         public ActionResult XoaDauSanPham(int id)
@@ -268,20 +281,7 @@ namespace Code_CH.Controllers
             var DauSanPham = database.DauSanPhams.Where(a => a.maDSP == id).SingleOrDefault();
             database.DauSanPhams.Remove(DauSanPham);
             database.SaveChanges();
-            return RedirectToAction("Index", "Home");
-            /* var check = database.DauSanPhams.Where(a => a.maDSP == id).FirstOrDefault();
-             if (check == null)
-             {
-                 var DauSanPham = database.DauSanPhams.Where(a => a.maDSP == id).SingleOrDefault();
-                 database.DauSanPhams.Remove(DauSanPham);
-                 database.SaveChanges();
-             }
-             else
-             {
-                 ViewBag.Error_XoaDauSach = "Không thể xoá vì còn tồn tại sách thuộc đầu sách này";
-             }
-             return RedirectToAction("Index", "Home");*/
-
+            return RedirectToAction("SuaDauSanPham", "Home");
         }
         /*Chi tiết sản phẩm*/
         public ActionResult ChiTietSanPham(string search)
@@ -298,6 +298,16 @@ namespace Code_CH.Controllers
             {
                 return View(database.SanPhams);
             }
+        }
+        [HttpGet]
+        public ActionResult XoaSanPham(int id)
+        {
+            ViewBag.Message = string.Format("Hello {0}.\\nCurrent Date and Time: {1}", id, DateTime.Now.ToString());
+            var sanPham = database.SanPhams.Where(a => a.maSP == id).SingleOrDefault();
+            database.SanPhams.Remove(sanPham);
+            database.SaveChanges();
+            return RedirectToAction("ChiTietSanPham", "Home");
+
         }
 
         //Thêm Chi tiết sản phẩm
@@ -326,15 +336,19 @@ namespace Code_CH.Controllers
                     a.sokiemsoat = i;
                     a.size = siz;
                     a.matinhTrang = 1;
-                    database.SanPhams.Add(a);
+                    /*   database.SanPhams.Add(a);*/
+
+                    // design pattern Proxy
+                    Proxy proxy = new Proxy(a);
+                    proxy.addSanPhamDB(database);
                 }
                 /*----- Cap nhat so luong -----*/
 
                 DauSanPham.soluongSP += soluongSP;
 
-                database.SaveChanges();
+             /*   database.SaveChanges();*/
                 ViewBag.ThemSach_message_suss = "Thêm thành công!";
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("DauSanPham", "Home");
             }
             else
             {
@@ -345,14 +359,16 @@ namespace Code_CH.Controllers
                     a.sokiemsoat = i;
                     a.size = siz;
                     a.matinhTrang = 1;
-                    database.SanPhams.Add(a);
+                    /* database.SanPhams.Add(a);*/
+                    Proxy proxy = new Proxy(a);
+                    proxy.addSanPhamDB(database);
                 }
                 /*----- Cap nhat so luong -----*/
                 DauSanPham.soluongSP += soluongSP;
 
                 database.SaveChanges();
                 ViewBag.ThemSach_message_suss = "Thêm thành công!";
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("DauSanPham", "Home");
             }
         }
         // quản lí taikhoankhachhang
@@ -367,19 +383,31 @@ namespace Code_CH.Controllers
             }
             else
             {
-                return View(database.TaiKhoanKhachHangs);
+                IIteratorTaiKhoan iterator = new TaiKhoansIIterator(tkkh);
+                var taikhoan = iterator.First();
+                while (!iterator.IsDone)
+                {
+                    if (taikhoan.maTT != 2)
+                    {
+                        taikhoan.TinhTrangTaiKhoan.tenTinhTrang = "block";
+                        database.SaveChanges();
+                    }
+                    taikhoan = iterator.Next();
+                }
+                return View(tkkh);
+             /*   return View(database.TaiKhoanKhachHangs);*/
             }
         }
         //Danh sách tài khoản active
         public ActionResult DS_TaiKhoanActive()
         {
-            var active = database.TaiKhoanKhachHangs.Where(a => a.maKH != 0 && a.maTT == 2).ToList();
+            var active = database.TaiKhoanKhachHangs.Where(a => a.maKH != 3 && a.maTT == 1).ToList();
             ViewBag.soluongtaikhoan = active.Count();
             return View(active);
         }
         public ActionResult DS_TaiKhoanBlock()
         {
-            var block = database.TaiKhoanKhachHangs.Where(a => a.maKH != 0 && a.maTT == 1).ToList();
+            var block = database.TaiKhoanKhachHangs.Where(a => a.maKH != 3 && a.maTT == 2).ToList();
             ViewBag.soluongtaikhoan = block.Count();
             return View(block);
         }
@@ -391,15 +419,15 @@ namespace Code_CH.Controllers
             /*  var donhang = database.HDs.Where(a => a.maKH == taikhoan.maKH && a.maTT != 4).SingleOrDefault();*/
             if (taikhoan.maTT != 1)
             {
-                taikhoan.maTT = 1;
+                taikhoan.maTT = 2;
                 database.Entry(taikhoan).State = System.Data.Entity.EntityState.Modified;
                 ViewBag.Mess_BlockTaiKhoan = "Block tài khoản thành công";
                 database.SaveChanges();
                 return RedirectToAction("DS_TaiKhoanBlock");
             }
-            else if (taikhoan.maTT == 1)
+            else if (taikhoan.maTT == 2)
             {
-                taikhoan.maTT = 2;
+                taikhoan.maTT = 1;
                 database.Entry(taikhoan).State = System.Data.Entity.EntityState.Modified;
                 ViewBag.Mess_BlockTaiKhoan = "Mở tài khoản thành công";
                 database.SaveChanges();
@@ -434,12 +462,22 @@ namespace Code_CH.Controllers
 
         }
         // danh sách đơn đặt hàng
-        public ActionResult DS_DonDatHang(int search)
+        public ActionResult DS_DonDatHang()
         {
             var Hd = database.HDs.Where(a => a.maTT == 1).ToList();
-            ViewBag.countDonHang = Hd.Count();
-
-
+            /*ViewBag.countDonHang = Hd.Count();
+            return View(Hd);*/
+            IIterator iterator = new DauSanPhamIIterator(Hd);
+            var sanPham = iterator.First();
+            while (!iterator.IsDone)
+            {
+                if (sanPham.soluong ==  0 & sanPham.maTT != 1)
+                {
+                    sanPham.maTT = 2;
+                    database.SaveChanges();
+                }
+                sanPham = iterator.Next();
+            }
             return View(Hd);
         }
 
@@ -515,6 +553,7 @@ namespace Code_CH.Controllers
 
             database.HDs.Remove(Hd);
             database.ChiTietHoaDons.Remove(ch);
+
             database.SaveChanges();
             return RedirectToAction("DS_DangGiao", "Home");
         }

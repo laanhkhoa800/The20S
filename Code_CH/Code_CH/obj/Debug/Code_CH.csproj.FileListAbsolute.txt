@@ -252,7 +252,245 @@ C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Common.dll
 C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Common.pdb
 C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\PayPal.dll
 C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\PayPal.xml
-C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Code_CH\obj\Debug\Code_CH.csproj.AssemblyReference.cache
-C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Code_CH\obj\Debug\Code_CH.csproj.CoreCompileInputs.cache
-C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Code_CH\obj\Debug\Code_CH.dll
-C:\Users\laanh\OneDrive\Máy tính\The20s\Code_CH\Code_CH\obj\Debug\Code_CH.pdb
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\MangoPay.Sdk.Portable.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\PayPalCoreSDK.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\PayPalHttp-Dotnet.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Sandbox.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Buffers.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Memory.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Numerics.Vectors.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Reactive.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.ValueTuple.dll
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.xml
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Buffers.xml
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Memory.xml
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Numerics.Vectors.xml
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Reactive.xml
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Admin\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.ValueTuple.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Code_CH.dll.config
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Code_CH.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Code_CH.pdb
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csc.exe
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csc.exe.config
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csc.rsp
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csi.exe
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csi.exe.config
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csi.rsp
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.AppContext.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Console.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.IO.Compression.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Net.Http.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Net.Sockets.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.ValueTuple.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Xml.XPath.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\vbc.exe
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\vbc.exe.config
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\vbc.rsp
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\VBCSCompiler.exe
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Antlr3.Runtime.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Common.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\EntityFramework.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\EntityFramework.SqlServer.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\MangoPay.Sdk.Portable.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Newtonsoft.Json.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\PayPal.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\PayPalCoreSDK.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\PayPalHttp-Dotnet.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Sandbox.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Buffers.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Drawing.Common.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Memory.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Numerics.Vectors.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Reactive.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.ValueTuple.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Helpers.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Mvc.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Optimization.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Razor.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.Deployment.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.Razor.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\WebGrease.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Common.pdb
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\EntityFramework.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\EntityFramework.SqlServer.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\PayPal.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Buffers.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Memory.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Numerics.Vectors.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Reactive.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.ValueTuple.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Helpers.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Mvc.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Optimization.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Razor.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.Deployment.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.Razor.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Newtonsoft.Json.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Antlr3.Runtime.pdb
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\obj\Debug\Code_CH.csproj.AssemblyReference.cache
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\obj\Debug\Code_CH.csproj.CoreCompileInputs.cache
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\obj\Debug\Code_CH.csproj.CopyComplete
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\obj\Debug\Code_CH.dll
+C:\Users\laanh\OneDrive\Máy tính\Code_CuaHang\Code_CH\Code_CH\obj\Debug\Code_CH.pdb
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Code_CH.dll.config
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Code_CH.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Code_CH.pdb
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csc.exe
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csc.exe.config
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csc.rsp
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csi.exe
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csi.exe.config
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\csi.rsp
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.AppContext.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Collections.Immutable.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Console.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Globalization.Calendars.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.IO.Compression.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.IO.FileSystem.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Net.Http.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Net.Sockets.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Reflection.Metadata.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.ValueTuple.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Xml.XPath.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\vbc.exe
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\vbc.exe.config
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\vbc.rsp
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\VBCSCompiler.exe
+D:\Code_CuaHang\Code_CH\Code_CH\bin\roslyn\VBCSCompiler.exe.config
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Antlr3.Runtime.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Common.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\EntityFramework.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\EntityFramework.SqlServer.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\MangoPay.Sdk.Portable.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Primitives.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Web.Infrastructure.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Newtonsoft.Json.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\PayPal.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\PayPalCoreSDK.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\PayPalHttp-Dotnet.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Sandbox.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Buffers.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Drawing.Common.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Memory.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Numerics.Vectors.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Reactive.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.ValueTuple.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Helpers.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Mvc.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Optimization.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Razor.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.Deployment.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.Razor.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\WebGrease.dll
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Common.pdb
+D:\Code_CuaHang\Code_CH\Code_CH\bin\EntityFramework.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\EntityFramework.SqlServer.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.Extensions.Primitives.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\PayPal.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Buffers.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Memory.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Numerics.Vectors.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Reactive.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.ValueTuple.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Helpers.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Mvc.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Optimization.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.Razor.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.Deployment.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\System.Web.WebPages.Razor.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Newtonsoft.Json.xml
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Antlr3.Runtime.pdb
+D:\Code_CuaHang\Code_CH\Code_CH\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Code_CuaHang\Code_CH\Code_CH\obj\Debug\Code_CH.csproj.AssemblyReference.cache
+D:\Code_CuaHang\Code_CH\Code_CH\obj\Debug\Code_CH.csproj.CoreCompileInputs.cache
+D:\Code_CuaHang\Code_CH\Code_CH\obj\Debug\Code_CH.csproj.CopyComplete
+D:\Code_CuaHang\Code_CH\Code_CH\obj\Debug\Code_CH.dll
+D:\Code_CuaHang\Code_CH\Code_CH\obj\Debug\Code_CH.pdb

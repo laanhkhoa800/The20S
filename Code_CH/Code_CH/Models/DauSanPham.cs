@@ -13,8 +13,11 @@ namespace Code_CH.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Web;
-
-    public partial class DauSanPham
+    public interface DauSanPhamPrototype
+    {
+        DauSanPhamPrototype Clone();
+    }
+    public  class DauSanPham : DauSanPhamPrototype
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DauSanPham()
@@ -50,5 +53,21 @@ namespace Code_CH.Models
         public HttpPostedFileBase imageUploader6 { get; set; }
 
         public virtual ICollection<SanPham> SanPhams { get; set; }
+
+        public DauSanPhamPrototype Clone()
+        {
+            DauSanPham dausanpham = new DauSanPham();
+            dausanpham.maDSP = maDSP;
+            dausanpham.tenSP = tenSP;
+            dausanpham.giaSP = giaSP;
+            dausanpham.soluongSP = soluongSP;
+            dausanpham.hinhanhphu1 = hinhanhphu1;
+            dausanpham.hinhanhphu2 = hinhanhphu2;
+            dausanpham.hinhanhphu3 = hinhanhphu3;
+            dausanpham.hinhanhphu4 = hinhanhphu4;
+            dausanpham.hinhanhphu5 = hinhanhphu5;
+            dausanpham.hinhanhSP = hinhanhSP;
+            return dausanpham;
+        }
     }
 }
